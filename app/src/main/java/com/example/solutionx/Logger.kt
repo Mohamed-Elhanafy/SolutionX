@@ -30,7 +30,7 @@ class Logger(private val context: Context) {
         val logFile = getLogFile()
         try {
             val writer = FileWriter(logFile, true)
-            writer.append(message)
+            writer.append(message + "\n")
             writer.flush()
             writer.close()
         } catch (e: IOException) {
