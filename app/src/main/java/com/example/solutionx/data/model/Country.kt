@@ -7,5 +7,5 @@ data class Country(
     val id: Int,
     val name: String,
     val phone_code: String,
-    val selected: Boolean
+    val isSelected: Boolean
 )

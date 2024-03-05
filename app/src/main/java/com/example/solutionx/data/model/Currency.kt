@@ -5,5 +5,5 @@ data class Currency(
     val id: Int,
     val name: String,
     val sign: String,
-    val selected: Boolean
+    val isSelected: Boolean
 )
