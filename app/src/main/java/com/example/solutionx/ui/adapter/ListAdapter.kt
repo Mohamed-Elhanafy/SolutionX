@@ -33,6 +33,35 @@ class ListAdapter<T>(
             codeTextView.text = item.code
             signTextView.text = item.sign
             isCheckedImageView.visibility = if (item.isSelected) View.VISIBLE else View.GONE
+
+                when (item.isSelected) {
+
+                    true -> {
+                        nameTextView.setTextColor(
+                            ContextCompat.getColor(
+                                itemView.context,
+                                R.color.myBlue
+                            )
+                        )
+                        codeTextView.setTextColor(
+                            ContextCompat.getColor(
+                                itemView.context,
+                                R.color.myBlue
+                            )
+                        )
+                        signTextView.setTextColor(
+                            ContextCompat.getColor(
+                                itemView.context,
+                                R.color.myBlue
+                            )
+                        )
+
+                    }
+
+                    false -> {
+
+                    }
+                }
         }
     }
 
@@ -42,7 +71,13 @@ class ListAdapter<T>(
 
         override fun bind(item: Filter) {
             nameTextView.text = item.name
+            if (item.isSelected) {
+                nameTextView.setTextColor(ContextCompat.getColor(itemView.context, R.color.myBlue))
+            }
+
             isCheckedImageView.visibility = if (item.isSelected) View.VISIBLE else View.GONE
+
+
         }
     }
 
@@ -63,11 +98,27 @@ class ListAdapter<T>(
             when (item.isSelected) {
 
                 true -> {
-                    nameTextView.setTextColor(ContextCompat.getColor(itemView.context, R.color.myBlue))
-                    currencyTextView.setTextColor(ContextCompat.getColor(itemView.context, R.color.myBlue))
-                    phoneCodeTextView.setTextColor(ContextCompat.getColor(itemView.context, R.color.myBlue))
+                    nameTextView.setTextColor(
+                        ContextCompat.getColor(
+                            itemView.context,
+                            R.color.myBlue
+                        )
+                    )
+                    currencyTextView.setTextColor(
+                        ContextCompat.getColor(
+                            itemView.context,
+                            R.color.myBlue
+                        )
+                    )
+                    phoneCodeTextView.setTextColor(
+                        ContextCompat.getColor(
+                            itemView.context,
+                            R.color.myBlue
+                        )
+                    )
 
                 }
+
                 false -> {
 
                 }
@@ -88,17 +139,23 @@ class ListAdapter<T>(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<T> {
         return when (viewType) {
             0 -> {
-                val itemView = LayoutInflater.from(parent.context).inflate(R.layout.currency_item, parent, false)
+                val itemView = LayoutInflater.from(parent.context)
+                    .inflate(R.layout.currency_item, parent, false)
                 CurrencyViewHolder(itemView) as BaseViewHolder<T>
             }
+
             1 -> {
-                val itemView = LayoutInflater.from(parent.context).inflate(R.layout.filter_item, parent, false)
+                val itemView =
+                    LayoutInflater.from(parent.context).inflate(R.layout.filter_item, parent, false)
                 FilterViewHolder(itemView) as BaseViewHolder<T>
             }
+
             2 -> {
-                val itemView = LayoutInflater.from(parent.context).inflate(R.layout.country_item, parent, false)
+                val itemView = LayoutInflater.from(parent.context)
+                    .inflate(R.layout.country_item, parent, false)
                 CountryViewHolder(itemView) as BaseViewHolder<T>
             }
+
             else -> throw IllegalArgumentException("Invalid viewType: $viewType")
         }
     }
@@ -106,6 +163,7 @@ class ListAdapter<T>(
     override fun getItemCount(): Int {
         return dataList.size
     }
+
     override fun onBindViewHolder(holder: BaseViewHolder<T>, position: Int) {
         val item = dataList[position]
         when (holder) {
@@ -114,16 +172,19 @@ class ListAdapter<T>(
                     holder.bind(item)
                 }
             }
+
             is FilterViewHolder -> {
                 if (item is Filter) {
                     holder.bind(item)
                 }
             }
+
             is CountryViewHolder -> {
                 if (item is Country) {
                     holder.bind(item)
                 }
             }
+
             else -> throw IllegalArgumentException("Invalid ViewHolder type")
         }
 
@@ -144,7 +205,6 @@ class ListAdapter<T>(
         }
 
     }
-
 
 
 }
