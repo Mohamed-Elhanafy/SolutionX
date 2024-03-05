@@ -1,17 +1,25 @@
 package com.example.solutionx.ui.screens
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 import com.example.solutionx.R
+import com.example.solutionx.ui.adapter.ListAdapter
+import com.example.solutionx.data.moc.countriesList
+import com.example.solutionx.data.moc.currencyList
+import com.example.solutionx.data.moc.filterList
+import com.example.solutionx.utils.Logger
 
 
 class HomeFragment : Fragment() {
 
-
+    private val countries = countriesList
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -19,8 +27,30 @@ class HomeFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_home, container, false)
 
+    }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView)
+
+        setupRv(recyclerView)
 
     }
+
+    private fun setupRv(recyclerView: RecyclerView?) {
+        val listAdapter = ListAdapter(countries) { item ->
+            val logger = Logger(requireContext())
+            logger.log("TAG", "onViewCreated: $item")
+
+        }
+
+        recyclerView?.apply {
+            layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+            adapter = listAdapter
+
+        }
+    }
+
 
 }
