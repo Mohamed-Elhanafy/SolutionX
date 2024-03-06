@@ -1,7 +1,7 @@
 package com.example.solutionx.ui.screens
 
+import am.leon.utilities.android.helpers.logging.LoggerFactory
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,9 +12,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.solutionx.R
 import com.example.solutionx.ui.adapter.ListAdapter
 import com.example.solutionx.data.moc.countriesList
-import com.example.solutionx.data.moc.currencyList
-import com.example.solutionx.data.moc.filterList
-import com.example.solutionx.utils.Logger
 
 
 class HomeFragment : Fragment() {
@@ -40,9 +37,10 @@ class HomeFragment : Fragment() {
 
     private fun setupRv(recyclerView: RecyclerView?) {
         val listAdapter = ListAdapter(countries) { item ->
-            val logger = Logger(requireContext())
-            logger.log("TAG", "onViewCreated: $item")
+            /*val logger = Logger(requireContext())
+            logger.log("TAG", "onViewCreated: $item")*/
 
+            logger.info("Item clicked: $item")
         }
 
         recyclerView?.apply {
@@ -52,5 +50,7 @@ class HomeFragment : Fragment() {
         }
     }
 
-
+    companion object {
+        private val logger = LoggerFactory.getLogger(HomeFragment::class.java)
+    }
 }

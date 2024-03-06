@@ -1,17 +1,14 @@
 package com.example.solutionx
 
+import am.leon.utilities.android.helpers.logging.LoggerFactory
 import android.os.Bundle
-import android.widget.Button
-import android.widget.TextView
+import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
-import com.example.solutionx.utils.Logger
-import java.util.Locale
 
 class MainActivity : AppCompatActivity() {
 
@@ -32,9 +29,17 @@ class MainActivity : AppCompatActivity() {
         val navController = navHostFragment?.findNavController()
 
 
-        val logger = Logger(this)
-        logger.log("home" , "Activity created")
 
+        logger.info("Activity created")
+
+
+        Log.i("home2", "onCreate: ")
+
+
+    }
+
+    companion object {
+        private val logger =LoggerFactory.getLogger(MainActivity::class.java)
     }
 }
 
