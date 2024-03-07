@@ -7,11 +7,5 @@
 
     <style name="Theme.SolutionX" parent="Base.Theme.SolutionX" />
 
-    <style name="ArabicFontStyle">
-        <item name="android:fontFamily">@font/tajwal</item>
-    </style>
 
-    <style name="EnglishFontStyle">
-        <item name="android:fontFamily">@font/galano_grotesque</item>
-    </style>
 </resources>

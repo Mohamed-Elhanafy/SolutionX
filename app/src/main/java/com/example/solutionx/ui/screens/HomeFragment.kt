@@ -37,8 +37,6 @@ class HomeFragment : Fragment() {
 
     private fun setupRv(recyclerView: RecyclerView?) {
         val listAdapter = ListAdapter(countries) { item ->
-            /*val logger = Logger(requireContext())
-            logger.log("TAG", "onViewCreated: $item")*/
 
             logger.info("Item clicked: $item")
         }
