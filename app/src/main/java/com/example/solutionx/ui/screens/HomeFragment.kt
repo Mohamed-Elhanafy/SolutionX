@@ -12,11 +12,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.solutionx.R
 import com.example.solutionx.ui.adapter.ListAdapter
 import com.example.solutionx.data.mock.countriesList
+import com.example.solutionx.data.mock.filterList
 
 
 class HomeFragment : Fragment() {
 
-    private val countries = countriesList
+    private val myList = filterList + countriesList
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -36,7 +37,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun setupRv(recyclerView: RecyclerView?) {
-        val listAdapter = ListAdapter(countries) { item ->
+        val listAdapter = ListAdapter(myList) { item ->
 
             logger.info("Item clicked: $item")
         }

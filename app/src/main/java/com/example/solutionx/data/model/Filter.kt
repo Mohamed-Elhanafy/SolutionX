@@ -1,7 +1,9 @@
 package com.example.solutionx.data.model
 
+import com.example.solutionx.ui.adapter.ListItem
+
 data class Filter(
-    val id: Int,
-    val name: String,
-    var isSelected: Boolean
-)
+    override val id: Int,
+    override val name: String,
+    override var isSelected: Boolean
+): ListItem

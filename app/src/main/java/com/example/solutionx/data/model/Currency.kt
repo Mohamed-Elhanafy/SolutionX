@@ -1,9 +1,11 @@
 package com.example.solutionx.data.model
 
+import com.example.solutionx.ui.adapter.ListItem
+
 data class Currency(
     val code: String,
-    val id: Int,
-    val name: String,
+    override val id: Int,
+    override val name: String,
     val sign: String,
-    var isSelected: Boolean
-)
+    override var isSelected: Boolean
+): ListItem

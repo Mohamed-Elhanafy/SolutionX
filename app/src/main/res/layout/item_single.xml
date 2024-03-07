@@ -17,7 +17,7 @@
 
         <TextView
             android:id="@+id/name"
-            style="@style/EnglishFontStyle"
+            style="@style/font_regular"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
