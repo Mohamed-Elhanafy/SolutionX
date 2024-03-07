@@ -1,4 +1,4 @@
-package com.example.solutionx.data.moc
+package com.example.solutionx.data.mock
 
 import com.example.solutionx.data.model.Country
 import com.example.solutionx.data.model.Currency

@@ -18,6 +18,5 @@
     <style name="CheckdTextViewStyle">
         <item name="android:fontFamily">@font/galano_grotesque</item>
         <item name="android:textColor">@color/myBlue</item>
-
     </style>
 </resources>

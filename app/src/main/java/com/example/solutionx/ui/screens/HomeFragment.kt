@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 import com.example.solutionx.R
 import com.example.solutionx.ui.adapter.ListAdapter
-import com.example.solutionx.data.moc.countriesList
+import com.example.solutionx.data.mock.countriesList
 
 
 class HomeFragment : Fragment() {
