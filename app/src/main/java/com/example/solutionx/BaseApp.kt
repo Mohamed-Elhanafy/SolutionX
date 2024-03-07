@@ -1,6 +1,7 @@
 package com.example.solutionx
 
 import am.leon.utilities.android.helpers.logging.LoggerFactory
+import am.leon.utilities.android.helpers.logging.writers.DummyWriter
 import am.leon.utilities.android.helpers.logging.writers.FileWriter
 import am.leon.utilities.android.helpers.logging.writers.LogcatWriter
 import android.app.Application
@@ -32,7 +33,9 @@ class BaseApp : Application() {
             }
 
             "production" -> {
-
+                LoggerFactory.setLogWriter(
+                    DummyWriter()
+                )
             }
         }
 
