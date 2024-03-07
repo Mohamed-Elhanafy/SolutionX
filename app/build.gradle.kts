@@ -39,15 +39,12 @@ android {
     productFlavors {
         create("logCat") {
             dimension = "logging"
-            applicationIdSuffix = ".logCat"
         }
         create("logWriter") {
             dimension = "logging"
-            applicationIdSuffix = ".logWriter"
         }
         create("production") {
             dimension = "logging"
-            applicationIdSuffix = ".production"
         }
     }
 
