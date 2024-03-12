@@ -23,24 +23,13 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-
         //set up the host fragment and the nav controller
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         val navController = navHostFragment?.findNavController()
 
-
-
-        logger.info("Activity created")
-
-
-        Log.i("home2", "onCreate: ")
-
-
     }
 
-    companion object {
-        private val logger =LoggerFactory.getLogger(MainActivity::class.java)
-    }
+
 }
 
 
