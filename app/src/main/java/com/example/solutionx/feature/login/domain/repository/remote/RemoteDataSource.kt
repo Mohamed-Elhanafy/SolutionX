@@ -1,4 +1,4 @@
-package com.example.solutionx.feature.login.data.repositoty.remote
+package com.example.solutionx.feature.login.domain.repository.remote
 
 import com.example.solutionx.feature.login.data.model.dto.UserDto
 

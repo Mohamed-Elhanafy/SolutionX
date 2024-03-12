@@ -21,7 +21,6 @@ class UserMapper {
         )
     }
 
-    //map to domain
     fun mapToDomain(userDto: UserDto): User {
         return User(
             id = userDto.id,
