@@ -1,8 +1,8 @@
-package com.example.solutionx.data.mappers
+package com.example.solutionx.feature.login.data.mappers
 
-import com.example.solutionx.data.model.dto.UserDto
-import com.example.solutionx.data.model.entity.UserEntity
-import com.example.solutionx.domain.models.User
+import com.example.solutionx.feature.login.data.model.dto.UserDto
+import com.example.solutionx.feature.login.data.model.entity.UserEntity
+import com.example.solutionx.feature.login.domain.models.User
 
 class UserMapper {
     fun mapToDto(userEntity: UserEntity): UserDto {

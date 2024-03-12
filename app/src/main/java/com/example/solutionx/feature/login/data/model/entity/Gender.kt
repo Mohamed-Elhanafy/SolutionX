@@ -1,4 +1,4 @@
-package com.example.solutionx.data.model.entity
+package com.example.solutionx.feature.login.data.model.entity
 
 enum class Gender(val value: Int) {
     UNDEFINED(0),

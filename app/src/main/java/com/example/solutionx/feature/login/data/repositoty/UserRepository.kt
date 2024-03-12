@@ -1,11 +1,11 @@
-package com.example.solutionx.data.repositoty
+package com.example.solutionx.feature.login.data.repositoty
 
 
-import com.example.solutionx.data.mappers.UserMapper
-import com.example.solutionx.data.model.dto.UserDto
-import com.example.solutionx.data.repositoty.local.LocalDataSource
-import com.example.solutionx.data.repositoty.remote.RemoteDataSource
-import com.example.solutionx.domain.models.User
+import com.example.solutionx.feature.login.data.mappers.UserMapper
+import com.example.solutionx.feature.login.data.model.dto.UserDto
+import com.example.solutionx.feature.login.data.repositoty.local.LocalDataSource
+import com.example.solutionx.feature.login.data.repositoty.remote.RemoteDataSource
+import com.example.solutionx.feature.login.domain.models.User
 
 class UserRepository(
     private val remoteDataSource: RemoteDataSource,

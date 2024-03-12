@@ -1,4 +1,4 @@
-package com.example.solutionx.data.model.entity
+package com.example.solutionx.feature.login.data.model.entity
 
 data class UserEntity(
     val userId: String,
