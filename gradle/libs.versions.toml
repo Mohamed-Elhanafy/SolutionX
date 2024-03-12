@@ -13,6 +13,9 @@ navigationFragmentKtx = "2.7.7"
 navigationUiKtx = "2.7.7"
 hilt = "2.51"
 ksp = "1.9.22-1.0.18"
+coroutines = "1.7.3"
+lifecycle = "2.7.0"
+lifecycleExtensions = "2.2.0"
 
 
 [libraries]
@@ -29,6 +32,14 @@ androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
 hilt-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
 ksp-gradlePlugin = { group = "com.google.devtools.ksp", name = "com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
+kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutines" }
+kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines" }
+lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
+lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle" }
+lifecycle-extensions = { group = "androidx.lifecycle", name = "lifecycle-extensions", version.ref = "lifecycleExtensions" }
+
+
+
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
