@@ -4,7 +4,7 @@ import com.example.solutionx.feature.login.data.model.dto.UserDto
 import com.example.solutionx.feature.login.data.model.entity.UserEntity
 import com.example.solutionx.feature.login.domain.models.User
 
-class UserMapper {
+object UserMapper {
     fun mapToDto(userEntity: UserEntity): UserDto {
         return UserDto(
             id = userEntity.userId,
