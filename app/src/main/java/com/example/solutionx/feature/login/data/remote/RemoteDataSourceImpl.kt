@@ -1,7 +1,7 @@
-package com.example.solutionx.feature.login.data.repositoty.remote
+package com.example.solutionx.feature.login.data.remote
 
 import com.example.solutionx.feature.login.data.model.dto.UserDto
-import com.example.solutionx.feature.login.domain.repository.remote.RemoteDataSource
+import com.example.solutionx.feature.login.domain.remote.RemoteDataSource
 
 class RemoteDataSourceImpl: RemoteDataSource {
     override fun loginWithEmailPassword(email: String, password: String): UserDto {
