@@ -1,5 +1,4 @@
 package com.example.solutionx.presentation.screens
-import LoginViewModel
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,7 +9,6 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.example.solutionx.R
 import com.example.solutionx.feature.login.domain.models.User
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 class LoginFragment : Fragment() {

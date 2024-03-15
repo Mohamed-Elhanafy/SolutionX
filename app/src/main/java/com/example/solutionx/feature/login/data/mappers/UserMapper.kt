@@ -13,11 +13,12 @@ object UserMapper {
         )
     }
 
-    fun mapToEntity(userDto: UserDto): UserEntity {
+
+    fun mapToEntity(user: User): UserEntity {
         return UserEntity(
-            userId = userDto.id,
-            username = userDto.name,
-            gender = userDto.gender
+            userId = user.id,
+            username = user.name,
+            gender = user.gender
         )
     }
 

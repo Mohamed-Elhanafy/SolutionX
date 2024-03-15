@@ -1,6 +1,6 @@
 package com.example.solutionx.feature.login.data.model.dto
 
-import com.example.solutionx.feature.login.data.model.entity.Gender
+import com.example.solutionx.feature.login.domain.models.enums.Gender
 
 data class UserDto(
     val id: String,

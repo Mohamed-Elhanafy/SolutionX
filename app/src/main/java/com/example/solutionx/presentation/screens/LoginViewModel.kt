@@ -1,10 +1,13 @@
+package com.example.solutionx.presentation.screens
+
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.solutionx.feature.login.data.local.LocalDataSourceImpl
+import com.example.solutionx.feature.login.data.remote.RemoteDataSourceImpl
+import com.example.solutionx.feature.login.data.repositoty.UserRepositoryImpl
 import com.example.solutionx.feature.login.domain.interactor.LoginWithEmailUC
 import com.example.solutionx.feature.login.domain.interactor.LoginWithPhoneUC
 import com.example.solutionx.feature.login.domain.interactor.LoginWithSocialUC
-import com.example.solutionx.presentation.screens.LoginIntent
-import com.example.solutionx.presentation.screens.LoginViewState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
@@ -16,6 +19,13 @@ class LoginViewModel(
 ) : ViewModel() {
     private val _state = MutableStateFlow<LoginViewState>(LoginViewState.Loading)
     val state: StateFlow<LoginViewState> get() = _state
+
+
+
+
+    private val userRepository = UserRepositoryImpl(RemoteDataSourceImpl())
+
+
 
     fun processIntent(intent: LoginIntent) {
         when (intent) {
