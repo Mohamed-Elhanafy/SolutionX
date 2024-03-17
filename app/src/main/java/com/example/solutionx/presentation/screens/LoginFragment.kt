@@ -9,8 +9,11 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.example.solutionx.R
 import com.example.solutionx.feature.login.domain.models.User
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
+
+@AndroidEntryPoint
 class LoginFragment : Fragment() {
     private val viewModel: LoginViewModel by viewModels()
 

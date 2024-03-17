@@ -5,8 +5,9 @@ import com.example.solutionx.feature.login.data.mappers.UserMapper
 import com.example.solutionx.feature.login.domain.models.User
 import com.example.solutionx.feature.login.domain.remote.RemoteDataSource
 import com.example.solutionx.feature.login.domain.repository.UserRepository
+import javax.inject.Inject
 
-class UserRepositoryImpl(
+class UserRepositoryImpl @Inject constructor(
     private val remoteDataSource: RemoteDataSource,
 ) : UserRepository {
     override suspend fun loginWithPhone(phone: String): User {
