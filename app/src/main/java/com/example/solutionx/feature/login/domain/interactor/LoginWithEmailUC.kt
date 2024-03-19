@@ -1,5 +1,7 @@
 package com.example.solutionx.feature.login.domain.interactor
 
+import com.example.solutionx.common.Resource
+import com.example.solutionx.common.SolutionXException
 import com.example.solutionx.feature.login.data.mappers.UserMapper
 import com.example.solutionx.feature.login.domain.local.LocalDataSource
 import com.example.solutionx.feature.login.domain.models.User
@@ -12,10 +14,28 @@ class LoginWithEmailUC @Inject constructor(
     private val userRepository: UserRepository,
     private val localDataSource: LocalDataSource,
 ) {
-    suspend operator fun invoke(email: String, password: String): Flow<User> = flow {
-        val user = userRepository.loginWithEmailPassword(email, password)
-        val userEntity = UserMapper.mapToEntity(user)
-        localDataSource.saveUser(userEntity)
-        emit(user)
+    suspend operator fun invoke(email: String, password: String): Flow<Resource<User>> = flow {
+        try {
+            emit(Resource.Loading())
+            val user = userRepository.loginWithEmailPassword(email, password)
+            val userEntity = UserMapper.mapToEntity(user)
+            localDataSource.saveUser(userEntity)
+            emit(Resource.Success(user))
+        } catch (e: SolutionXException) {
+            // Handle SolutionXException
+            when (e) {
+                is SolutionXException.NoNetworkConnection -> {
+                    emit(Resource.Error(e))
+                }
+
+                is SolutionXException.HttpException -> {
+                    emit(Resource.Error(e))
+                }
+
+                is SolutionXException.IOException -> {
+                    emit(Resource.Error(e))
+                }
+            }
+        }
     }
 }
