@@ -1,5 +1,6 @@
 package com.example.solutionx.features.authentication.di
 
+import com.example.solutionx.features.authentication.data.network.LoginApi
 import com.example.solutionx.features.authentication.data.repositoty.local.LocalDataSourceImpl
 import com.example.solutionx.features.authentication.data.repositoty.remote.RemoteDataSourceImpl
 import com.example.solutionx.features.authentication.data.repositoty.UserRepositoryImpl
@@ -13,6 +14,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ViewModelComponent
+import javax.inject.Inject
 
 
 @Module
@@ -20,13 +22,13 @@ import dagger.hilt.android.components.ViewModelComponent
 internal object LoginDiModule {
 
     @Provides
-    fun provideUserRepository(): UserRepository {
-        return UserRepositoryImpl(RemoteDataSourceImpl() , LocalDataSourceImpl())
+    fun provideUserRepository(loginApi: LoginApi): UserRepository {
+        return UserRepositoryImpl(RemoteDataSourceImpl(loginApi) , LocalDataSourceImpl())
     }
 
     @Provides
-    fun provideRemoteDataSource(): RemoteDataSource {
-        return RemoteDataSourceImpl()
+    fun provideRemoteDataSource(loginApi: LoginApi): RemoteDataSource {
+        return RemoteDataSourceImpl(loginApi)
     }
 
     @Provides
