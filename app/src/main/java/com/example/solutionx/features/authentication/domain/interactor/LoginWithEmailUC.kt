@@ -1,7 +1,7 @@
 package com.example.solutionx.features.authentication.domain.interactor
 
-import com.example.solutionx.common.Resource
-import com.example.solutionx.common.SolutionXException
+import com.example.solutionx.common.data.models.Resource
+import com.example.solutionx.common.data.models.SolutionXException
 import com.example.solutionx.features.authentication.data.mappers.UserMapper
 import com.example.solutionx.features.authentication.domain.models.User
 import com.example.solutionx.features.authentication.domain.repository.UserRepository

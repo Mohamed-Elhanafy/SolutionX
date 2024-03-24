@@ -15,17 +15,17 @@ internal class UserRepositoryImpl @Inject constructor(
 ) : UserRepository {
     override suspend fun loginWithPhone(phone: String): User {
         val userDto = remoteDataSource.loginWithPhone(phone)
-        return UserMapper.mapToDomain(userDto)
+        return UserMapper.mapToDomain(userDto!!)
     }
 
     override suspend fun loginWithEmailPassword(email: String, password: String): User {
         val userDto = remoteDataSource.loginWithEmailPassword(email, password)
-        return UserMapper.mapToDomain(userDto)
+        return UserMapper.mapToDomain(userDto!!)
     }
 
     override suspend fun loginWithSocial(token: String): User {
         val userDto = remoteDataSource.loginWithSocial(token)
-        return UserMapper.mapToDomain(userDto)
+        return UserMapper.mapToDomain(userDto!!)
     }
 
     override suspend fun saveUser(user: UserEntity) {

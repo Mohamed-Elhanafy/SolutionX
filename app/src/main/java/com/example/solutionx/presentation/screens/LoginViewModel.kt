@@ -2,7 +2,7 @@ package com.example.solutionx.presentation.screens
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.solutionx.common.Resource
+import com.example.solutionx.common.data.models.Resource
 import com.example.solutionx.features.authentication.domain.interactor.LoginWithEmailUC
 import com.example.solutionx.features.authentication.domain.interactor.LoginWithPhoneUC
 import com.example.solutionx.features.authentication.domain.interactor.LoginWithSocialUC

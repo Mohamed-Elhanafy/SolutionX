@@ -1,4 +1,4 @@
-package com.example.solutionx.common
+package com.example.solutionx.common.data.models
 
 
 sealed class SolutionXException(message: String? = null) : Exception(message) {

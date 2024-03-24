@@ -1,4 +1,4 @@
-package com.example.solutionx.common.android
+package com.example.solutionx.android
 
 import am.leon.utilities.android.helpers.logging.LoggerFactory
 import am.leon.utilities.android.helpers.logging.writers.DummyWriter

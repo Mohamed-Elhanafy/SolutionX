@@ -95,5 +95,8 @@ dependencies {
     implementation(libs.retrofit)
     implementation(libs.retrofit.gson)
 
+    //okhttp interceptor
+    implementation(libs.okhttp.logging.interceptor)
+
 
 }
