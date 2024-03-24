@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.example.solutionx.R
-import com.example.solutionx.feature.login.domain.models.User
+import com.example.solutionx.features.authentication.domain.models.User
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -42,6 +42,9 @@ class LoginFragment : Fragment() {
                     is LoginViewState.Error -> {
                         // Handle error
                         val error: Throwable = state.error
+                    }
+                    is LoginViewState.idle -> {
+                        // Handle idle
                     }
                 }
             }
