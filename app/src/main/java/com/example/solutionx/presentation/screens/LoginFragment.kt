@@ -1,5 +1,6 @@
 package com.example.solutionx.presentation.screens
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -38,6 +39,7 @@ class LoginFragment : Fragment() {
                     is LoginViewState.Success -> {
                         // Handle success
                         val user: User = state.user
+                        Log.i("Main", user.name)
                     }
                     is LoginViewState.Error -> {
                         // Handle error
@@ -53,10 +55,10 @@ class LoginFragment : Fragment() {
         val loginButton = view.findViewById<Button>(R.id.loginButton)
 
         loginButton.setOnClickListener {
-            val email = "test@gmail.com"
-            val password = "123456"
-            val intent = LoginIntent.LoginWithEmail(email, password)
+            val intent = LoginIntent.LoginWithPhone("test")
             viewModel.processIntent(intent)
+
+
         }
     }
 }

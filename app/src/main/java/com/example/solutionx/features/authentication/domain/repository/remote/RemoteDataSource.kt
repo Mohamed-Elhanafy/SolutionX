@@ -7,5 +7,5 @@ internal interface RemoteDataSource {
 
     fun loginWithSocial(token: String): UserDto?
 
-    fun loginWithPhone(phoneNumber: String): UserDto?
+    suspend fun loginWithPhone(phoneNumber: String): UserDto?
 }
