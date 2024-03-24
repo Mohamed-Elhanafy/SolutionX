@@ -86,5 +86,13 @@ dependencies {
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.kotlinx.coroutines.core)
 
+    //ktor client
+    implementation(libs.ktor.client.okhttp)
+
+    //retrofit
+    implementation(libs.retrofit)
+    implementation(libs.retrofit.gson)
+
+
 
 }
