@@ -3,6 +3,8 @@ plugins {
     alias(libs.plugins.jetbrainsKotlinAndroid)
     alias(libs.plugins.ksp)
     alias(libs.plugins.hilt)
+    id("org.jetbrains.kotlin.plugin.parcelize")
+
 }
 
 android {
@@ -92,7 +94,6 @@ dependencies {
     //retrofit
     implementation(libs.retrofit)
     implementation(libs.retrofit.gson)
-
 
 
 }

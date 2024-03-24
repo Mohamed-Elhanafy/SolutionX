@@ -19,7 +19,7 @@ ksp = "1.9.10-1.0.13"
 hilt = "2.48.1"
 
 retrofit = "2.9.0"
-gson = "2.8.8"
+gson = "2.10.0"
 ktor = "2.3.9"
 
 
@@ -63,4 +63,6 @@ androidApplication = { id = "com.android.application", version.ref = "agp" }
 jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+
+
 
