@@ -1,8 +1,8 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
-    alias(libs.plugins.hilt)
     alias(libs.plugins.ksp)
+    alias(libs.plugins.hilt)
 }
 
 android {
@@ -75,8 +75,7 @@ dependencies {
 
     //hilt
     implementation(libs.hilt.android)
-    ksp(libs.hilt.compiler)
-    ksp(libs.ksp.gradlePlugin)
+    ksp(libs.hilt.android.compiler)
 
     //lifeCycle
     implementation(libs.lifecycle.viewmodel.ktx)
