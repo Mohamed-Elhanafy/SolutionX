@@ -5,28 +5,20 @@ import com.example.solutionx.features.authentication.data.model.entity.UserEntit
 import com.example.solutionx.features.authentication.domain.models.User
 
 object UserMapper {
-    fun mapToDto(userEntity: UserEntity): UserDto {
-        return UserDto(
-            id = userEntity.userId,
-            name = userEntity.username,
-            gender = userEntity.gender
-        )
-    }
+
 
 
     fun mapToEntity(user: User): UserEntity {
         return UserEntity(
             userId = user.id,
-            username = user.name,
-            gender = user.gender
+            username = user.name
         )
     }
 
     fun mapToDomain(userDto: UserDto): User {
         return User(
             id = userDto.id,
-            name = userDto.name,
-            gender = userDto.gender
+            name = userDto.firstname + " " + userDto.lastname
         )
     }
 }
