@@ -98,5 +98,8 @@ dependencies {
     //okhttp interceptor
     implementation(libs.okhttp.logging.interceptor)
 
+    //dataStore
+    implementation(libs.datastore)
+
 
 }
