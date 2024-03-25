@@ -8,31 +8,31 @@ import android.os.Parcelable
 @Parcelize
 data class UserDto(
     @SerializedName("all_permissions")
-    val allpermissions: List<String>,
+    val allPermissions: List<String?>? = null,
     @SerializedName("birthdate")
-    val birthdate: String,
+    val birthdate: String? = null,
     @SerializedName("blocked")
-    val blocked: Int,
+    val blocked: Int? = null,
     @SerializedName("country")
-    val countryDto: CountryDto,
+    val countryDto: CountryDto? = null,
     @SerializedName("email")
-    val email: String,
+    val email: String? = null,
     @SerializedName("email_verified")
-    val emailVerified: Boolean,
+    val emailVerified: Boolean? = null,
     @SerializedName("firstname")
-    val firstname: String,
+    val firstname: String? = null,
     @SerializedName("id")
-    val id: Int,
+    val id: Int? = null,
     @SerializedName("image")
-    val image: String,
+    val image: String? = null,
     @SerializedName("lastname")
-    val lastname: String,
+    val lastname: String? = null,
     @SerializedName("middlename")
-    val middlename: String,
+    val middlename: String? = null,
     @SerializedName("phone")
-    val phoneDto: PhoneDto,
+    val phoneDto: PhoneDto? = null,
     @SerializedName("phone_verified")
-    val phoneVerified: Boolean,
+    val phoneVerified: Boolean? = null,
     @SerializedName("username")
-    val username: String
+    val username: String? = null
 ) : Parcelable

@@ -8,15 +8,15 @@ import android.os.Parcelable
 @Parcelize
 data class CountryDto(
     @SerializedName("code")
-    val code: String,
+    val code: String? = null,
     @SerializedName("currency")
-    val currency: String,
+    val currency: String? = null,
     @SerializedName("flag")
-    val flag: String,
+    val flag: String? = null,
     @SerializedName("id")
-    val id: Int,
+    val id: Int? = null,
     @SerializedName("name")
-    val name: String,
+    val name: String? = null,
     @SerializedName("phone_code")
-    val phoneCode: String
+    val phoneCode: String? = null
 ) : Parcelable

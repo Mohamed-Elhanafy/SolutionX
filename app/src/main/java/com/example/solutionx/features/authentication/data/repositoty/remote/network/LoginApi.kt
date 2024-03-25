@@ -1,4 +1,4 @@
-package com.example.solutionx.features.authentication.data.network
+package com.example.solutionx.features.authentication.data.repositoty.remote.network
 
 import com.example.solutionx.features.authentication.data.model.dto.LoginResponseDto
 import retrofit2.http.Field

@@ -8,9 +8,9 @@ import android.os.Parcelable
 @Parcelize
 data class LoginResponseDto(
     @SerializedName("message")
-    val message: String,
+    val message: String? = null,
     @SerializedName("token")
-    val token: String,
+    val token: String? = null,
     @SerializedName("user")
-    val userDto: UserDto
+    val userDto: UserDto? = null
 ) : Parcelable

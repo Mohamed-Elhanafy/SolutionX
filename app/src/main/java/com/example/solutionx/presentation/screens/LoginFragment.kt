@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.example.solutionx.R
+import com.example.solutionx.features.authentication.domain.models.LoginResponse
 import com.example.solutionx.features.authentication.domain.models.User
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -38,8 +39,8 @@ class LoginFragment : Fragment() {
                     }
                     is LoginViewState.Success -> {
                         // Handle success
-                        val user: User = state.user
-                        Log.i("Main", user.name)
+                        val login:LoginResponse  = state.login
+                        Log.i("Main", login.user.name)
                     }
                     is LoginViewState.Error -> {
                         // Handle error
