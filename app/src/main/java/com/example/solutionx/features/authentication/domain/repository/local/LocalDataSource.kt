@@ -4,7 +4,7 @@ import com.example.solutionx.features.authentication.data.model.entity.LoginResp
 import com.example.solutionx.features.authentication.data.model.entity.UserEntity
 
 internal interface LocalDataSource {
-    fun saveUser(loginResponse: LoginResponseEntity)
+    suspend fun saveUser(loginResponse: LoginResponseEntity)
 
-    fun getUser(userId: String): UserEntity
+    suspend fun getUser(userId: String): UserEntity
 }

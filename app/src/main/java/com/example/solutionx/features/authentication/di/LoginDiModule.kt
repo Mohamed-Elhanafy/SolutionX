@@ -1,9 +1,11 @@
 package com.example.solutionx.features.authentication.di
 
+import android.content.Context
 import com.example.solutionx.features.authentication.data.repositoty.remote.network.LoginApi
 import com.example.solutionx.features.authentication.data.repositoty.local.LocalDataSourceImpl
 import com.example.solutionx.features.authentication.data.repositoty.remote.RemoteDataSourceImpl
 import com.example.solutionx.features.authentication.data.repositoty.LoginRepositoryImpl
+import com.example.solutionx.features.authentication.data.repositoty.local.UserPreferences
 import com.example.solutionx.features.authentication.domain.interactor.LoginWithEmailUC
 import com.example.solutionx.features.authentication.domain.interactor.LoginWithPhoneUC
 import com.example.solutionx.features.authentication.domain.interactor.LoginWithSocialUC
@@ -14,6 +16,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ViewModelComponent
+import dagger.hilt.android.qualifiers.ApplicationContext
 
 
 @Module
@@ -21,8 +24,14 @@ import dagger.hilt.android.components.ViewModelComponent
 internal object LoginDiModule {
 
     @Provides
-    fun provideUserRepository(loginApi: LoginApi): LoginRepository {
-        return LoginRepositoryImpl(RemoteDataSourceImpl(loginApi) , LocalDataSourceImpl())
+    fun provideUserRepository(
+        loginApi: LoginApi,
+        userPreferences: UserPreferences
+    ): LoginRepository {
+        return LoginRepositoryImpl(
+            RemoteDataSourceImpl(loginApi),
+            LocalDataSourceImpl(userPreferences)
+        )
     }
 
     @Provides
@@ -31,8 +40,16 @@ internal object LoginDiModule {
     }
 
     @Provides
-    fun providesLocalDataSource(): LocalDataSource {
-        return LocalDataSourceImpl()
+    fun providesLocalDataSource(
+        userPreferences: UserPreferences
+    ): LocalDataSource {
+        return LocalDataSourceImpl(userPreferences)
+    }
+
+    //provide user preferences
+    @Provides
+    fun provideUserPreferences(@ApplicationContext context: Context): UserPreferences {
+        return UserPreferences(context)
     }
 
 
@@ -42,7 +59,9 @@ internal object LoginDiModule {
     }
 
     @Provides
-    fun provideLoginWithPhoneUC(loginRepository: LoginRepository): LoginWithPhoneUC {
+    fun provideLoginWithPhoneUC(
+        loginRepository: LoginRepository,
+    ): LoginWithPhoneUC {
         return LoginWithPhoneUC(loginRepository)
     }
 
