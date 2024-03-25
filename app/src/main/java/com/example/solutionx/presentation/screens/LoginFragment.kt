@@ -45,7 +45,7 @@ class LoginFragment : Fragment() {
                         // Handle error
                         val error: Throwable = state.error
                     }
-                    is LoginViewState.idle -> {
+                    is LoginViewState.Idle -> {
                         // Handle idle
                     }
                 }
@@ -55,10 +55,8 @@ class LoginFragment : Fragment() {
         val loginButton = view.findViewById<Button>(R.id.loginButton)
 
         loginButton.setOnClickListener {
-            val intent = LoginIntent.LoginWithPhone("test")
+            val intent = LoginIntent.LoginWithPhone("100100100")
             viewModel.processIntent(intent)
-
-
         }
     }
 }

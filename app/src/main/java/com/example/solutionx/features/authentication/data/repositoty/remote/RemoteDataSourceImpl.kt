@@ -20,7 +20,7 @@ internal class RemoteDataSourceImpl @Inject constructor(
     }
 
     override suspend fun loginWithPhone(phoneNumber: String): UserDto? {
-        return loginApi.login("0020" , "100100100" , "123456789").userDto
+        return loginApi.login("0020" , phoneNumber , "123456789").userDto
     }
 
 

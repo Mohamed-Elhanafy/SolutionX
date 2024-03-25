@@ -20,7 +20,7 @@ class LoginViewModel @Inject constructor(
 ) : ViewModel() {
 
 
-    private val _state = MutableStateFlow<LoginViewState>(LoginViewState.idle)
+    private val _state = MutableStateFlow<LoginViewState>(LoginViewState.Idle)
     val state: StateFlow<LoginViewState> get() = _state
 
 
