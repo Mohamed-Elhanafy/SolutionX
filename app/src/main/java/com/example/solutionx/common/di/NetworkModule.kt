@@ -1,7 +1,8 @@
-package com.example.solutionx.common.data.di
+package com.example.solutionx.common.di
 
 import android.content.Context
 import com.example.solutionx.common.data.constants.Constants.BASE_URL
+import com.example.solutionx.features.authentication.data.repositoty.remote.LoginApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

@@ -1,7 +1,7 @@
 package com.example.solutionx.features.authentication.di
 
 import android.content.Context
-import com.example.solutionx.features.authentication.data.repositoty.remote.network.LoginApi
+import com.example.solutionx.features.authentication.data.repositoty.remote.LoginApi
 import com.example.solutionx.features.authentication.data.repositoty.local.LocalDataSourceImpl
 import com.example.solutionx.features.authentication.data.repositoty.remote.RemoteDataSourceImpl
 import com.example.solutionx.features.authentication.data.repositoty.LoginRepositoryImpl

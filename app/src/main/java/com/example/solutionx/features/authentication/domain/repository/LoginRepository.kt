@@ -9,5 +9,5 @@ interface LoginRepository {
     suspend fun loginWithEmailPassword(email: String, password: String): LoginResponse
     suspend fun loginWithSocial(token: String): LoginResponse
 
-    suspend fun saveUser(login: LoginResponse)
+    suspend fun saveLogin(login: LoginResponse)
 }
