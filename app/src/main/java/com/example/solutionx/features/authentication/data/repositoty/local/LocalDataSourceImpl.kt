@@ -19,14 +19,7 @@ internal class LocalDataSourceImpl(
 ) : LocalDataSource {
 
 
-/*    override suspend fun saveLogin(loginResponse: LoginResponseEntity) {
-        Log.d("LocalDataSourceImpl", "saveUser: $loginResponse")
-        keyValueStorage.save(USER_NAME, loginResponse.user.name)
-        keyValueStorage.save(USER_EMAIL, loginResponse.user.email)
-        keyValueStorage.save(USER_ID, loginResponse.user.userId)
-        keyValueStorage.save(ACCESS_TOKEN, loginResponse.accessToken)
-        keyValueStorage.save(IS_USER_LOGGED_IN, true)
-    }*/
+
     override suspend fun saveLogin(loginResponse: LoginResponseEntity) {
         Log.d("LocalDataSourceImpl", "saveUser: $loginResponse")
         val userJson = gson.toJson(loginResponse.user)
@@ -37,14 +30,6 @@ internal class LocalDataSourceImpl(
     override suspend fun getAccessToken(): String {
         return keyValueStorage.get(ACCESS_TOKEN)
     }
-
-/*    override suspend fun getUser(): UserEntity {
-        val userName = keyValueStorage.get<String>(USER_NAME)
-        val userEmail = keyValueStorage.get<String>(USER_EMAIL)
-        val userId = keyValueStorage.get<Int>(USER_ID)
-
-        return UserEntity(userId, userName, userEmail)
-    }*/
 
     override suspend fun getUser(): UserEntity {
         val userJson = keyValueStorage.get<String>(USER)
