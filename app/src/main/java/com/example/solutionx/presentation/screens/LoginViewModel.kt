@@ -4,7 +4,6 @@ import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.solutionx.common.data.models.Resource
-import com.example.solutionx.features.authentication.data.repositoty.local.UserPreferences
 import com.example.solutionx.features.authentication.domain.interactor.LoginWithEmailUC
 import com.example.solutionx.features.authentication.domain.interactor.LoginWithPhoneUC
 import com.example.solutionx.features.authentication.domain.interactor.LoginWithSocialUC
@@ -18,9 +17,7 @@ import javax.inject.Inject
 class LoginViewModel @Inject constructor(
     private val loginWithEmailUC: LoginWithEmailUC,
     private val loginWithPhoneUC: LoginWithPhoneUC,
-    private val loginWithSocialUC: LoginWithSocialUC,
-    private val userPreferences: UserPreferences
-
+    private val loginWithSocialUC: LoginWithSocialUC
 ) : ViewModel() {
 
 
@@ -94,9 +91,7 @@ class LoginViewModel @Inject constructor(
                 }
             }
 
-            userPreferences.isUserLoggedIn.collect { isLoggedIn ->
-                Log.d("LoginViewModel", "User logged in: $isLoggedIn")
-            }
+
         }
     }
 }

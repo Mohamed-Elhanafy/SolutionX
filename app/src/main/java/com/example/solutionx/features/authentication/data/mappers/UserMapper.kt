@@ -21,4 +21,12 @@ object UserMapper : Mapper<UserDto, User, UserEntity>() {
             email = model.email
         )
     }
+
+    override fun entityToDomain(model: UserEntity): User {
+        return User(
+            id = model.userId ,
+            name = model.name,
+            email = model.email
+        )
+    }
 }

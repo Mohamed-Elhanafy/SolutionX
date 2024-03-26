@@ -10,7 +10,7 @@ class LoginWithEmailUC(
     private val loginRepository: LoginRepository,
 ) {
     suspend operator fun invoke(email: String, password: String): Flow<Resource<LoginResponse>> {
-        return executeNetworkCall {
+        return executeNetworkCall<LoginResponse> {
             val login = loginRepository.loginWithEmailPassword(email, password)
             loginRepository.saveLogin(login)
             login

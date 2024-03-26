@@ -2,8 +2,10 @@ package com.example.solutionx.features.authentication.data.repositoty
 
 
 import com.example.solutionx.features.authentication.data.mappers.LoginResponseMapper
+import com.example.solutionx.features.authentication.data.mappers.UserMapper
 import com.example.solutionx.features.authentication.data.model.dto.LoginResponseDto
 import com.example.solutionx.features.authentication.domain.models.LoginResponse
+import com.example.solutionx.features.authentication.domain.models.User
 import com.example.solutionx.features.authentication.domain.repository.remote.RemoteDataSource
 import com.example.solutionx.features.authentication.domain.repository.LoginRepository
 import com.example.solutionx.features.authentication.domain.repository.local.LocalDataSource
@@ -31,5 +33,10 @@ internal class LoginRepositoryImpl @Inject constructor(
     override suspend fun saveLogin(login: LoginResponse) {
         val result = LoginResponseMapper.domainToEntity(login)
         localDataSource.saveLogin(result)
+    }
+
+    override suspend fun geUser(): User {
+        val result = localDataSource.getUser()
+        return UserMapper.entityToDomain(result)
     }
 }

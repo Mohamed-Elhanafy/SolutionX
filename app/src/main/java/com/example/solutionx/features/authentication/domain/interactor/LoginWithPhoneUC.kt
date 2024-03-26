@@ -1,5 +1,6 @@
 package com.example.solutionx.features.authentication.domain.interactor
 
+import android.util.Log
 import com.example.solutionx.common.data.extentions.executeNetworkCall
 import com.example.solutionx.common.data.models.Resource
 import com.example.solutionx.features.authentication.domain.models.LoginResponse
@@ -13,7 +14,8 @@ class LoginWithPhoneUC(
         return executeNetworkCall {
             val login = loginRepository.loginWithPhone(phone)
             loginRepository.saveLogin(login)
-           login
+            Log.i("LoginWithPhoneUC", loginRepository.geUser().name)
+            login
         }
     }
 

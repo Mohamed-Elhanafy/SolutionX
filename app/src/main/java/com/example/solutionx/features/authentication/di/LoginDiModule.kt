@@ -5,12 +5,13 @@ import com.example.solutionx.features.authentication.data.repositoty.remote.Logi
 import com.example.solutionx.features.authentication.data.repositoty.local.LocalDataSourceImpl
 import com.example.solutionx.features.authentication.data.repositoty.remote.RemoteDataSourceImpl
 import com.example.solutionx.features.authentication.data.repositoty.LoginRepositoryImpl
-import com.example.solutionx.features.authentication.data.repositoty.local.UserPreferences
+import com.example.solutionx.features.authentication.data.storage.DataStoreStorage
 import com.example.solutionx.features.authentication.domain.interactor.LoginWithEmailUC
 import com.example.solutionx.features.authentication.domain.interactor.LoginWithPhoneUC
 import com.example.solutionx.features.authentication.domain.interactor.LoginWithSocialUC
 import com.example.solutionx.features.authentication.domain.repository.local.LocalDataSource
 import com.example.solutionx.features.authentication.domain.repository.LoginRepository
+import com.example.solutionx.features.authentication.domain.repository.local.KeyValueStorage
 import com.example.solutionx.features.authentication.domain.repository.remote.RemoteDataSource
 import dagger.Module
 import dagger.Provides
@@ -26,11 +27,11 @@ internal object LoginDiModule {
     @Provides
     fun provideUserRepository(
         loginApi: LoginApi,
-        userPreferences: UserPreferences
+        keyValueStorage: KeyValueStorage
     ): LoginRepository {
         return LoginRepositoryImpl(
             RemoteDataSourceImpl(loginApi),
-            LocalDataSourceImpl(userPreferences)
+            LocalDataSourceImpl(keyValueStorage)
         )
     }
 
@@ -41,15 +42,15 @@ internal object LoginDiModule {
 
     @Provides
     fun providesLocalDataSource(
-        userPreferences: UserPreferences
+        keyValueStorage: KeyValueStorage
     ): LocalDataSource {
-        return LocalDataSourceImpl(userPreferences)
+        return LocalDataSourceImpl(keyValueStorage)
     }
 
     //provide user preferences
     @Provides
-    fun provideUserPreferences(@ApplicationContext context: Context): UserPreferences {
-        return UserPreferences(context)
+    fun provideDataStoreStorage(@ApplicationContext context: Context): KeyValueStorage {
+        return DataStoreStorage(context)
     }
 
 
