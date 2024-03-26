@@ -10,9 +10,13 @@ import kotlinx.coroutines.flow.Flow
 class LoginWithPhoneUC(
     private val loginRepository: LoginRepository,
 ) {
-    suspend operator fun invoke(phone: String): Flow<Resource<LoginResponse>>{
+    suspend operator fun invoke(
+        countryCode: String,
+        phone: String,
+        password: String
+    ): Flow<Resource<LoginResponse>> {
         return executeNetworkCall {
-            val login = loginRepository.loginWithPhone(phone)
+            val login = loginRepository.loginWithPhone(countryCode, phone, password)
             loginRepository.saveLogin(login)
             Log.i("LoginWithPhoneUC", loginRepository.geUser().name)
             login

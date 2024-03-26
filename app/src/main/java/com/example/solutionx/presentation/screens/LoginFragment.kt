@@ -56,7 +56,7 @@ class LoginFragment : Fragment() {
         val loginButton = view.findViewById<Button>(R.id.loginButton)
 
         loginButton.setOnClickListener {
-            val intent = LoginIntent.LoginWithPhone("100100100")
+            val intent = LoginIntent.LoginWithPhone("0020","100100100","123456789")
             viewModel.processIntent(intent)
         }
     }

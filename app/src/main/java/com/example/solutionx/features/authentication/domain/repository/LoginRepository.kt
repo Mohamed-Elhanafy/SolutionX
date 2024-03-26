@@ -6,7 +6,7 @@ import com.example.solutionx.features.authentication.domain.models.LoginResponse
 import com.example.solutionx.features.authentication.domain.models.User
 
 interface LoginRepository {
-    suspend fun loginWithPhone(phone: String): LoginResponse
+    suspend fun loginWithPhone(countryCode:String, phone: String , password: String): LoginResponse
     suspend fun loginWithEmailPassword(email: String, password: String): LoginResponse
     suspend fun loginWithSocial(token: String): LoginResponse
 

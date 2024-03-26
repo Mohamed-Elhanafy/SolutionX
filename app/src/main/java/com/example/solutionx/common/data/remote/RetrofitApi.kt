@@ -1,11 +1,11 @@
-package com.example.solutionx.features.authentication.data.repositoty.remote
+package com.example.solutionx.common.data.remote
 
 import com.example.solutionx.features.authentication.data.model.dto.LoginResponseDto
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.POST
 
-interface LoginApi {
+interface RetrofitApi {
 
     @FormUrlEncoded
     @POST("login")

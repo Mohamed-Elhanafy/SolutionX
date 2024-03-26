@@ -75,7 +75,11 @@ class LoginViewModel @Inject constructor(
 
     private fun loginWithPhone(intent: LoginIntent.LoginWithPhone) {
         viewModelScope.launch {
-            loginWithPhoneUC(intent.phone).collect { resource ->
+            loginWithPhoneUC(
+                intent.countryCode,
+                intent.phone,
+                intent.password
+            ).collect { resource ->
                 when (resource) {
                     is Resource.Loading -> {
                         // Loading

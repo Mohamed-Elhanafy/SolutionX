@@ -2,7 +2,7 @@ package com.example.solutionx.common.di
 
 import android.content.Context
 import com.example.solutionx.common.data.constants.Constants.BASE_URL
-import com.example.solutionx.features.authentication.data.repositoty.remote.LoginApi
+import com.example.solutionx.common.data.remote.RetrofitApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -41,11 +41,11 @@ object NetworkModule {
     fun provideRetrofit(
         okHttpClient: OkHttpClient,
         gsonConverterFactory: GsonConverterFactory
-    ): LoginApi =
+    ): RetrofitApi =
         Retrofit.Builder()
             .addConverterFactory(gsonConverterFactory)
             .baseUrl(BASE_URL)
             .client(okHttpClient)
-            .build().create(LoginApi::class.java)
+            .build().create(RetrofitApi::class.java)
 
 }

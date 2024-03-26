@@ -11,42 +11,30 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 
 
+import com.google.gson.Gson
+import androidx.datastore.preferences.core.stringPreferencesKey
+
 class DataStoreStorage(private val context: Context) : KeyValueStorage {
     private val Context.dataStore by preferencesDataStore("user_preferences")
 
-    override suspend fun saveString(key: String, value: String) {
+    override suspend fun <T> save(key: String, value: T) {
         context.dataStore.edit { preferences ->
-            preferences[stringPreferencesKey(key)] = value
+            when (value) {
+                is String -> preferences[stringPreferencesKey(key)] = value
+                is Int -> preferences[intPreferencesKey(key)] = value
+                is Boolean -> preferences[booleanPreferencesKey(key)] = value
+                else -> throw IllegalArgumentException("Unsupported type")
+            }
         }
     }
 
-    override suspend fun getString(key: String): String {
+    @Suppress("UNCHECKED_CAST")
+    override suspend fun <T> get(key: String): T {
         return context.dataStore.data.map { preferences ->
-            preferences[stringPreferencesKey(key)] ?: ""
-        }.first()
-    }
-
-    override suspend fun saveInt(key: String, value: Int) {
-        context.dataStore.edit { preferences ->
-            preferences[intPreferencesKey(key)] = value
-        }
-    }
-
-    override suspend fun getInt(key: String): Int {
-        return context.dataStore.data.map { preferences ->
-            preferences[intPreferencesKey(key)] ?: -1
-        }.first()
-    }
-
-    override suspend fun saveBoolean(key: String, value: Boolean) {
-        context.dataStore.edit { preferences ->
-            preferences[booleanPreferencesKey(key)] = value
-        }
-    }
-
-    override suspend fun getBoolean(key: String): Boolean {
-        return context.dataStore.data.map { preferences ->
-            preferences[booleanPreferencesKey(key)] ?: false
+            preferences[stringPreferencesKey(key)] as? T
+                ?: preferences[intPreferencesKey(key)] as? T
+                ?: preferences[booleanPreferencesKey(key)] as? T
+                ?: throw IllegalArgumentException("Unsupported type")
         }.first()
     }
 }

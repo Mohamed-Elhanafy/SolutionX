@@ -15,8 +15,8 @@ internal class LoginRepositoryImpl @Inject constructor(
     private val remoteDataSource: RemoteDataSource,
     private val localDataSource: LocalDataSource
 ) : LoginRepository {
-    override suspend fun loginWithPhone(phone: String): LoginResponse {
-        val result: LoginResponseDto? = remoteDataSource.loginWithPhone(phone)
+    override suspend fun loginWithPhone(countryCode:String, phone: String , password: String): LoginResponse {
+        val result: LoginResponseDto? = remoteDataSource.loginWithPhone(countryCode , phone , password)
         return LoginResponseMapper.dtoToDomain(result!!)
     }
 

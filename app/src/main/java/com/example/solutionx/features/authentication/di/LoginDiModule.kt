@@ -1,7 +1,7 @@
 package com.example.solutionx.features.authentication.di
 
 import android.content.Context
-import com.example.solutionx.features.authentication.data.repositoty.remote.LoginApi
+import com.example.solutionx.common.data.remote.RetrofitApi
 import com.example.solutionx.features.authentication.data.repositoty.local.LocalDataSourceImpl
 import com.example.solutionx.features.authentication.data.repositoty.remote.RemoteDataSourceImpl
 import com.example.solutionx.features.authentication.data.repositoty.LoginRepositoryImpl
@@ -13,6 +13,7 @@ import com.example.solutionx.features.authentication.domain.repository.local.Loc
 import com.example.solutionx.features.authentication.domain.repository.LoginRepository
 import com.example.solutionx.features.authentication.domain.repository.local.KeyValueStorage
 import com.example.solutionx.features.authentication.domain.repository.remote.RemoteDataSource
+import com.google.gson.Gson
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -26,25 +27,25 @@ internal object LoginDiModule {
 
     @Provides
     fun provideUserRepository(
-        loginApi: LoginApi,
+        retrofitApi: RetrofitApi,
         keyValueStorage: KeyValueStorage
     ): LoginRepository {
         return LoginRepositoryImpl(
-            RemoteDataSourceImpl(loginApi),
-            LocalDataSourceImpl(keyValueStorage)
+            RemoteDataSourceImpl(retrofitApi),
+            LocalDataSourceImpl(keyValueStorage, Gson())
         )
     }
 
     @Provides
-    fun provideRemoteDataSource(loginApi: LoginApi): RemoteDataSource {
-        return RemoteDataSourceImpl(loginApi)
+    fun provideRemoteDataSource(retrofitApi: RetrofitApi): RemoteDataSource {
+        return RemoteDataSourceImpl(retrofitApi)
     }
 
     @Provides
     fun providesLocalDataSource(
         keyValueStorage: KeyValueStorage
     ): LocalDataSource {
-        return LocalDataSourceImpl(keyValueStorage)
+        return LocalDataSourceImpl(keyValueStorage, Gson())
     }
 
     //provide user preferences
@@ -70,4 +71,6 @@ internal object LoginDiModule {
     fun provideLoginWithSocialUC(loginRepository: LoginRepository): LoginWithSocialUC {
         return LoginWithSocialUC(loginRepository)
     }
+
+
 }
