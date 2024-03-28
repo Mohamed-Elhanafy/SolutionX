@@ -4,17 +4,18 @@
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
+    // ------------------------------------------- Fonts -------------------------------------------
 
-    <style name="font_regular">
+    <style name="font_regular" parent="@android:style/TextAppearance">
         <item name="android:fontFamily">@font/app_font_regular</item>
     </style>
 
     <style name="font_bold">
-        <item name="android:fontFamily">@font/app_font_bold</item>
+        <item name="android:fontFamily" parent="font_regular">@font/app_font_bold</item>
     </style>
 
     <style name="font_medium">
-        <item name="android:fontFamily">@font/app_font_medium</item>
+        <item name="android:fontFamily" parent="font_regular">@font/app_font_medium</item>
     </style>
 
 </resources>
