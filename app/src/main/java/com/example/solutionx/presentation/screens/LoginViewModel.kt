@@ -1,12 +1,12 @@
 package com.example.solutionx.presentation.screens
 
-import android.util.Log
+import am.leon.utilities.android.helpers.logging.LoggerFactory
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.solutionx.common.data.models.Resource
-import com.example.solutionx.features.authentication.domain.interactor.LoginWithEmailUC
-import com.example.solutionx.features.authentication.domain.interactor.LoginWithPhoneUC
-import com.example.solutionx.features.authentication.domain.interactor.LoginWithSocialUC
+import com.example.solutionx.features.login.domain.interactor.LoginWithEmailUC
+import com.example.solutionx.features.login.domain.interactor.LoginWithPhoneUC
+import com.example.solutionx.features.login.domain.interactor.LoginWithSocialUC
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -76,26 +76,32 @@ class LoginViewModel @Inject constructor(
     private fun loginWithPhone(intent: LoginIntent.LoginWithPhone) {
         viewModelScope.launch {
             loginWithPhoneUC(
-                intent.countryCode,
-                intent.phone,
-                intent.password
+                intent.loginRequest
             ).collect { resource ->
                 when (resource) {
                     is Resource.Loading -> {
                         // Loading
+                        logger.info("Loading")
                     }
 
                     is Resource.Success -> {
                         _state.value = LoginViewState.Success(resource.data)
+                        logger.info(resource.data.toString())
                     }
 
                     is Resource.Failure -> {
                         _state.value = LoginViewState.Error(resource.exception)
+                        logger.debug(resource.exception.toString())
                     }
                 }
             }
 
 
         }
+    }
+
+
+    companion object {
+        private val logger = LoggerFactory.getLogger(LoginFragment::class.java)
     }
 }

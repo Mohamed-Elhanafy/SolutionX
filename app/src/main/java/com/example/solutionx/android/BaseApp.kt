@@ -36,7 +36,9 @@ class BaseApp : Application() {
 
             "production" -> {
                 LoggerFactory.setLogWriter(
-                    DummyWriter()
+                    DummyWriter(
+
+                    )
                 )
             }
         }

@@ -2,7 +2,7 @@ package com.example.solutionx.common.di
 
 import android.content.Context
 import com.example.solutionx.common.data.constants.Constants.BASE_URL
-import com.example.solutionx.common.data.remote.RetrofitApi
+import com.example.solutionx.common.data.repository.remote.RetrofitApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

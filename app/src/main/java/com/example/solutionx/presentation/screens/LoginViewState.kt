@@ -1,7 +1,6 @@
 package com.example.solutionx.presentation.screens
 
-import com.example.solutionx.features.authentication.domain.models.LoginResponse
-import com.example.solutionx.features.authentication.domain.models.User
+import com.example.solutionx.features.login.domain.models.LoginResponse
 
 sealed class LoginViewState {
     object Loading : LoginViewState()
