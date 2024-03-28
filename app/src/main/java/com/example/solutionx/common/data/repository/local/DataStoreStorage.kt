@@ -1,4 +1,4 @@
-package com.example.solutionx.features.authentication.data.storage
+package com.example.solutionx.common.data.repository.local
 
 import android.content.Context
 import androidx.datastore.preferences.core.booleanPreferencesKey
@@ -6,13 +6,9 @@ import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.intPreferencesKey
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
-import com.example.solutionx.features.authentication.domain.repository.local.KeyValueStorage
+import com.example.solutionx.common.domain.repository.local.KeyValueStorage
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
-
-
-import com.google.gson.Gson
-import androidx.datastore.preferences.core.stringPreferencesKey
 
 class DataStoreStorage(private val context: Context) : KeyValueStorage {
     private val Context.dataStore by preferencesDataStore("user_preferences")
