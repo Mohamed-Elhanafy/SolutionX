@@ -1,4 +1,6 @@
-package am.leon.utilities.android.helpers.logging
+package com.example.solutionx.android.helpers.logger
+
+import am.leon.utilities.android.helpers.logging.LoggerFactory
 
 class Logger(private val clazz: Class<*>) {
     /**

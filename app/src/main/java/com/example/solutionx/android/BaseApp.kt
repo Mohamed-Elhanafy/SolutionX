@@ -6,6 +6,7 @@ import am.leon.utilities.android.helpers.logging.writers.FileWriter
 import am.leon.utilities.android.helpers.logging.writers.LogcatWriter
 import android.app.Application
 import com.example.solutionx.BuildConfig
+import com.example.solutionx.android.helpers.logger.LoggerProvider
 import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp
@@ -14,34 +15,7 @@ class BaseApp : Application() {
         super.onCreate()
 
 
-        when (BuildConfig.FLAVOR) {
-            "logCat" -> {
-                LoggerFactory.setLogWriter(
-                LogcatWriter(
-                    "SolutionX",
-                    BuildConfig.DEBUG
-                ))
-            }
-
-            "logWriter" -> {
-                LoggerFactory.setLogWriter(
-                    FileWriter(
-                        "SolutionX",
-                        "SolutionXLogFile",
-                        "test_logger",
-                        BuildConfig.DEBUG
-                    )
-                )
-            }
-
-            "production" -> {
-                LoggerFactory.setLogWriter(
-                    DummyWriter(
-
-                    )
-                )
-            }
-        }
+        LoggerProvider.provideLogger()
 
     }
 
