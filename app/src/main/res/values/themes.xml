@@ -4,6 +4,9 @@
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
+
+
+
     // ------------------------------------------- Fonts -------------------------------------------
 
     <style name="font_regular" parent="@android:style/TextAppearance">

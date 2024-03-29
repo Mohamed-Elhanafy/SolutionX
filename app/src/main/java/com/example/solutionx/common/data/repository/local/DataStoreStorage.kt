@@ -13,23 +13,25 @@ import kotlinx.coroutines.flow.map
 class DataStoreStorage(private val context: Context) : KeyValueStorage {
     private val Context.dataStore by preferencesDataStore("user_preferences")
 
-    override suspend fun <T> save(key: String, value: T) {
+    override suspend fun <K, V> save(key: K, value: V) {
         context.dataStore.edit { preferences ->
+            val stringKey = key.toString()
             when (value) {
-                is String -> preferences[stringPreferencesKey(key)] = value
-                is Int -> preferences[intPreferencesKey(key)] = value
-                is Boolean -> preferences[booleanPreferencesKey(key)] = value
+                is String -> preferences[stringPreferencesKey(stringKey)] = value
+                is Int -> preferences[intPreferencesKey(stringKey)] = value
+                is Boolean -> preferences[booleanPreferencesKey(stringKey)] = value
                 else -> throw IllegalArgumentException("Unsupported type")
             }
         }
     }
 
     @Suppress("UNCHECKED_CAST")
-    override suspend fun <T> get(key: String): T {
+    override suspend fun <K, V> get(key: K): V {
+        val stringKey = key.toString()
         return context.dataStore.data.map { preferences ->
-            preferences[stringPreferencesKey(key)] as? T
-                ?: preferences[intPreferencesKey(key)] as? T
-                ?: preferences[booleanPreferencesKey(key)] as? T
+            preferences[stringPreferencesKey(stringKey)] as? V
+                ?: preferences[intPreferencesKey(stringKey)] as? V
+                ?: preferences[booleanPreferencesKey(stringKey)] as? V
                 ?: throw IllegalArgumentException("Unsupported type")
         }.first()
     }
