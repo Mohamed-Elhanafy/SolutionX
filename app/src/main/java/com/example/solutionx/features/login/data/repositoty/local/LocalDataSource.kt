@@ -29,7 +29,7 @@ internal class LocalDataSource(
     }
 
     override suspend fun getUser(): UserEntity {
-        val userJson = keyValueStorage.get<String>(USER)
+        val userJson = keyValueStorage.get<String, String>(USER)
         return gson.fromJson(userJson, UserEntity::class.java)
     }
 

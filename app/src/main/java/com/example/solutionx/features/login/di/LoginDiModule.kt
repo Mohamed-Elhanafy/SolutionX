@@ -12,6 +12,7 @@ import com.example.solutionx.features.login.domain.interactor.LoginWithSocialUC
 import com.example.solutionx.features.login.domain.repository.local.ILocalDataSource
 import com.example.solutionx.features.login.domain.repository.ILoginRepository
 import com.example.solutionx.common.domain.repository.local.KeyValueStorage
+import com.example.solutionx.common.domain.repository.remote.IRestApiNetworkProvider
 import com.example.solutionx.features.login.domain.repository.remote.IRemoteDataSource
 import com.google.gson.Gson
 import dagger.Module
@@ -27,7 +28,7 @@ internal object LoginDiModule {
 
     @Provides
     fun provideUserRepository(
-        retrofitApi: RetrofitApi,
+        retrofitApi: IRestApiNetworkProvider,
         keyValueStorage: KeyValueStorage
     ): ILoginRepository {
         return LoginRepository(
@@ -37,7 +38,7 @@ internal object LoginDiModule {
     }
 
     @Provides
-    fun provideRemoteDataSource(retrofitApi: RetrofitApi): IRemoteDataSource {
+    fun provideRemoteDataSource(retrofitApi: IRestApiNetworkProvider): IRemoteDataSource {
         return RemoteDataSource(retrofitApi)
     }
 
@@ -62,9 +63,9 @@ internal object LoginDiModule {
 
     @Provides
     fun provideLoginWithPhoneUC(
-        ILoginRepository: ILoginRepository,
+        loginRepository: ILoginRepository,
     ): LoginWithPhoneUC {
-        return LoginWithPhoneUC(ILoginRepository)
+        return LoginWithPhoneUC(loginRepository)
     }
 
     @Provides

@@ -1,12 +1,13 @@
 package com.example.solutionx.features.login.data.repositoty.remote
 
 import com.example.solutionx.common.data.repository.remote.RetrofitApi
+import com.example.solutionx.common.domain.repository.remote.IRestApiNetworkProvider
 import com.example.solutionx.features.login.data.model.dto.LoginResponseDto
 import com.example.solutionx.features.login.data.model.request.LoginRequest
 import com.example.solutionx.features.login.domain.repository.remote.IRemoteDataSource
 
 internal class RemoteDataSource(
-    private val retrofitApi: RetrofitApi
+    private val provider: IRestApiNetworkProvider
 ) : IRemoteDataSource {
     override fun loginWithEmailPassword(email: String, password: String): LoginResponseDto? {
         return null
@@ -20,7 +21,11 @@ internal class RemoteDataSource(
     override suspend fun loginWithPhone(
         loginRequest: LoginRequest
     ): LoginResponseDto {
-        return retrofitApi.login(loginRequest)
+        return provider.post(
+            responseWrappedModel = LoginResponseDto::class.java,
+            pathUrl = "login",
+            requestBody = loginRequest
+        )
     }
 
 

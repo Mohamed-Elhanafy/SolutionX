@@ -3,6 +3,8 @@ package com.example.solutionx.common.di
 import android.content.Context
 import com.example.solutionx.common.data.constants.Constants.BASE_URL
 import com.example.solutionx.common.data.repository.remote.RetrofitApi
+import com.example.solutionx.common.data.repository.remote.RetrofitRestApiProvider
+import com.example.solutionx.common.domain.repository.remote.IRestApiNetworkProvider
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -33,6 +35,11 @@ object NetworkModule {
     @Provides
     fun provideGsonConverterFactory(): GsonConverterFactory {
         return GsonConverterFactory.create()
+    }
+
+    @Provides
+    fun provideNetworkProvider(retrofitApi: RetrofitApi): IRestApiNetworkProvider {
+        return RetrofitRestApiProvider(retrofitApi)
     }
 
 
