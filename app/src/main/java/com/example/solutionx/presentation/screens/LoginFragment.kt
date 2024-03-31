@@ -1,5 +1,8 @@
 package com.example.solutionx.presentation.screens
+
+import am.leon.utilities.android.helpers.logging.LoggerFactory
 import android.os.Bundle
+import android.provider.ContactsContract
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,7 +11,10 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.example.solutionx.R
-import com.example.solutionx.features.authentication.domain.models.User
+import com.example.solutionx.features.login.data.model.request.LoginRequest
+import com.example.solutionx.features.login.data.model.request.PhoneRequest
+import com.example.solutionx.features.login.domain.models.LoginResponse
+
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -35,15 +41,20 @@ class LoginFragment : Fragment() {
                     is LoginViewState.Loading -> {
                         // Show loading
                     }
+
                     is LoginViewState.Success -> {
                         // Handle success
-                        val user: User = state.user
+                        val login: LoginResponse = state.login
+                        fragmentLogger.info(login.user.name)
+
                     }
+
                     is LoginViewState.Error -> {
                         // Handle error
                         val error: Throwable = state.error
                     }
-                    is LoginViewState.idle -> {
+
+                    is LoginViewState.Idle -> {
                         // Handle idle
                     }
                 }
@@ -53,10 +64,22 @@ class LoginFragment : Fragment() {
         val loginButton = view.findViewById<Button>(R.id.loginButton)
 
         loginButton.setOnClickListener {
-            val email = "test@gmail.com"
-            val password = "123456"
-            val intent = LoginIntent.LoginWithEmail(email, password)
+            val loginRequest = LoginRequest(
+                phone = PhoneRequest(
+                    countryCode = "0020",
+                    number = "100100100"
+                ),
+                password = "123456789"
+            )
+
+            val intent = LoginIntent.LoginWithPhone(loginRequest)
             viewModel.processIntent(intent)
         }
     }
+
+    companion object {
+        private val fragmentLogger = LoggerFactory.getLogger(LoginFragment::class.java)
+    }
+
+
 }

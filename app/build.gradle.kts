@@ -3,6 +3,8 @@ plugins {
     alias(libs.plugins.jetbrainsKotlinAndroid)
     alias(libs.plugins.ksp)
     alias(libs.plugins.hilt)
+    id("org.jetbrains.kotlin.plugin.parcelize")
+
 }
 
 android {
@@ -85,6 +87,19 @@ dependencies {
     //coroutines
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.kotlinx.coroutines.core)
+
+    //ktor client
+    implementation(libs.ktor.client.okhttp)
+
+    //retrofit
+    implementation(libs.retrofit)
+    implementation(libs.retrofit.gson)
+
+    //okhttp interceptor
+    implementation(libs.okhttp.logging.interceptor)
+
+    //dataStore
+    implementation(libs.datastore)
 
 
 }
