@@ -11,7 +11,12 @@ class RetrofitRestApiProvider(private val api: RetrofitApi) : IRestApiNetworkPro
         headers: Map<String, Any>?,
         queryParameters: Map<String, Any>?
     ): ResponseBody {
-        TODO("Not yet implemented")
+        val response = api.get(
+            pathUrl = pathUrl,
+            headers = headers ?: emptyMap(),
+            queryParameters = queryParameters ?: emptyMap()
+        )
+        return Gson().fromJson(response.body().toString(), responseWrappedModel)
     }
 
     override suspend fun <ResponseBody, RequestBody> post(
@@ -37,7 +42,13 @@ class RetrofitRestApiProvider(private val api: RetrofitApi) : IRestApiNetworkPro
         queryParameters: Map<String, Any>?,
         requestBody: RequestBody?
     ): ResponseBody {
-        TODO("Not yet implemented")
+           val response = api.put(
+                pathUrl = pathUrl,
+                headers = headers ?: emptyMap(),
+                queryParameters = queryParameters ?: emptyMap(),
+                requestBody = requestBody ?: Unit
+            )
+            return Gson().fromJson(response.string(), responseWrappedModel)
     }
 
 
