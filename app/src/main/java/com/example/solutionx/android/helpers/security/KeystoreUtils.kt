@@ -12,6 +12,7 @@ import javax.crypto.spec.GCMParameterSpec
 object KeystoreUtils {
     private const val ANDROID_KEYSTORE = "AndroidKeyStore"
     private const val AES_GCM_NOPADDING = "AES/GCM/NoPadding"
+
     private const val KEY_ALIAS = "my_key_alias"
 
     fun getSecretKey(): SecretKey {
@@ -19,9 +20,13 @@ object KeystoreUtils {
         keystore.load(null)
 
         if (!keystore.containsAlias(KEY_ALIAS)) {
-            val keyGenerator = KeyGenerator.getInstance(KeyProperties.KEY_ALGORITHM_AES, ANDROID_KEYSTORE)
+            val keyGenerator =
+                KeyGenerator.getInstance(KeyProperties.KEY_ALGORITHM_AES, ANDROID_KEYSTORE)
             keyGenerator.init(
-                KeyGenParameterSpec.Builder(KEY_ALIAS, KeyProperties.PURPOSE_ENCRYPT or KeyProperties.PURPOSE_DECRYPT)
+                KeyGenParameterSpec.Builder(
+                    KEY_ALIAS,
+                    KeyProperties.PURPOSE_ENCRYPT or KeyProperties.PURPOSE_DECRYPT
+                )
                     .setBlockModes(KeyProperties.BLOCK_MODE_GCM)
                     .setEncryptionPaddings(KeyProperties.ENCRYPTION_PADDING_NONE)
                     .setRandomizedEncryptionRequired(false)
@@ -44,7 +49,7 @@ object KeystoreUtils {
 
     fun decrypt(iv: ByteArray, encrypted: ByteArray): String {
         val cipher = Cipher.getInstance(AES_GCM_NOPADDING)
-        val spec = GCMParameterSpec(128, iv)
+        val spec = GCMParameterSpec(128, iv)  // AlgorithmParameterSpec
         cipher.init(Cipher.DECRYPT_MODE, getSecretKey(), spec)
         return String(cipher.doFinal(encrypted), Charsets.UTF_8)
     }
