@@ -1,6 +1,7 @@
 package com.example.solutionx.common.data.repository.local
 
 import android.content.Context
+import android.util.Base64
 import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.intPreferencesKey
@@ -20,6 +21,7 @@ class DataStoreStorage(private val context: Context) : KeyValueStorage {
                 is String -> preferences[stringPreferencesKey(stringKey)] = value
                 is Int -> preferences[intPreferencesKey(stringKey)] = value
                 is Boolean -> preferences[booleanPreferencesKey(stringKey)] = value
+
                 else -> throw IllegalArgumentException("Unsupported type")
             }
         }
