@@ -37,4 +37,19 @@ class DataStoreStorage(private val context: Context) : KeyValueStorage {
                 ?: throw IllegalArgumentException("Unsupported type")
         }.first()
     }
+
+    companion object {
+        @Volatile
+        private var INSTANCE: DataStoreStorage? = null
+
+        fun getInstance(context: Context): DataStoreStorage {
+            return INSTANCE ?: synchronized(this) {
+                INSTANCE ?: DataStoreStorage(context).also { INSTANCE = it }
+            }
+        }
+    }
 }
+
+
+
+
