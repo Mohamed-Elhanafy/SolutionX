@@ -15,6 +15,7 @@ object KeystoreUtils {
 
     private const val KEY_ALIAS = "my_key_alias"
 
+    @JvmStatic
     fun getSecretKey(): SecretKey {
         val keystore = KeyStore.getInstance(ANDROID_KEYSTORE)
         keystore.load(null)

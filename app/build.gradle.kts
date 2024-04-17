@@ -72,10 +72,18 @@ dependencies {
     implementation(libs.androidx.navigation.ui.ktx)
 
     //testing
-    testImplementation(libs.junit.jupiter)
-    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.mockwebserver)
     androidTestImplementation(libs.androidx.espresso.core)
+    androidTestImplementation(libs.androidx.junit)
+    testImplementation(libs.junit.jupiter)
+    testImplementation("junit:junit:4.12")
+    testImplementation("junit:junit:4.12")
     testImplementation(libs.junit)
+    testImplementation(libs.truth)
+    testImplementation(libs.junit)
+    testImplementation(libs.mockito.core)
+    testImplementation(libs.kotlinx.coroutines.test)
+
 
     //hilt
     implementation(libs.hilt.android)
