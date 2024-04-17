@@ -5,4 +5,5 @@ sealed class Resource<out Model> {
     class Failure(val exception: SolutionXException) : Resource<Nothing>()
     class Loading(val isLoading :Boolean) : Resource<Nothing>()
 
+
 }

@@ -32,6 +32,8 @@ class RetrofitRestApiProvider(private val api: RetrofitApi) : IRestApiNetworkPro
             queryParameters = queryParameters ?: emptyMap(),
             requestBody = requestBody ?: Unit
         )
+
+
         return Gson().fromJson(response.string(), responseWrappedModel)
     }
 

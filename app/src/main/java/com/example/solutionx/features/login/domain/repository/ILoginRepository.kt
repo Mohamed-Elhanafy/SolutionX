@@ -11,6 +11,5 @@ interface ILoginRepository {
     suspend fun loginWithSocial(token: String): LoginResponse
 
     suspend fun saveLogin(login: LoginResponse)
-
     suspend fun geUser(): User
 }

@@ -48,6 +48,7 @@ class LoginViewModel @Inject constructor(
                     is Resource.Failure -> {
                         _state.value = LoginViewState.Error(resource.exception)
                     }
+
                 }
             }
         }
