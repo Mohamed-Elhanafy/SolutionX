@@ -26,7 +26,7 @@ class LoginWithPhoneUCTest {
     }
 
     @Test
-    fun `invoke calls repository methods and returns expected result`() = runTest {
+    fun invokeCallsRepositoryMethodsAndReturnsExpectedResult() = runTest {
         val loginRequest = LoginRequest(PhoneRequest("002","01110964776"), "testPassword")
         val expectedLoginResponse = LoginResponse("testToken", User(1, "testEmail", "testPhone"))
         loginRepository.loginResponse = expectedLoginResponse
@@ -43,7 +43,7 @@ class LoginWithPhoneUCTest {
     }
 
     @Test
-    fun `invoke returns failure when login fails due to incorrect credentials`() = runTest {
+    fun invokeReturnsFailureWhenLoginFailsDueToIncorrectCredentials() = runTest {
 
         val loginRequest = LoginRequest(PhoneRequest("002","01110964776"), "wrongPassword")
         loginRepository.loginResponse = null // Simulate login failure
@@ -61,7 +61,7 @@ class LoginWithPhoneUCTest {
 
 
     @Test
-    fun `invoke returns failure when there's a network error`() = runTest {
+    fun invokeReturnsFailureWhenThereIsANetworkError() = runTest {
 
         val loginRequest = LoginRequest(PhoneRequest("002","01110964776"), "testPassword")
         loginRepository.loginResponse = null // Simulate network error
