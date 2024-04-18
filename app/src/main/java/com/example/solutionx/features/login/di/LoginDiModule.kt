@@ -52,7 +52,7 @@ internal object LoginDiModule {
     //provide user preferences
     @Provides
     fun provideDataStoreStorage(@ApplicationContext context: Context): KeyValueStorage {
-        return DataStoreStorage(context)
+        return DataStoreStorage.getInstance(context)
     }
 
 
