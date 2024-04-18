@@ -4,6 +4,7 @@ package com.example.solutionx.android.helpers.security
 
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertNotEquals
 import org.junit.Assert.assertNotNull
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -30,6 +31,42 @@ class KeystoreUtilsAndroidTest {
 
         assertEquals(originalText, decryptedText)
     }
+
+
+
+    @Test
+    fun testEncryptWithSpecialCharacters() {
+        val originalText = "solutionx@#"
+
+        val (iv, encrypted) = KeystoreUtils.encrypt(originalText)
+        val decryptedText = KeystoreUtils.decrypt(iv, encrypted)
+
+        assertEquals(originalText, decryptedText)
+    }
+
+    @Test
+    fun testEncryptWithNumbers() {
+        val originalText = "123456"
+
+        val (iv, encrypted) = KeystoreUtils.encrypt(originalText)
+        val decryptedText = KeystoreUtils.decrypt(iv, encrypted)
+
+        assertEquals(originalText, decryptedText)
+    }
+
+    @Test(expected = javax.crypto.AEADBadTagException::class)
+    fun testEncryptionWithWrongIv() {
+        val originalText = "solutionx"
+
+        val (iv, encrypted) = KeystoreUtils.encrypt(originalText)
+        val wrongIv = ByteArray(12)
+        val decryptedText = KeystoreUtils.decrypt(wrongIv, encrypted)
+
+    }
+
+
+
+
 
     @Test
     fun testGetSecretKey() {
