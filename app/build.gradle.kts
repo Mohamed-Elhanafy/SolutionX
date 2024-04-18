@@ -75,6 +75,9 @@ dependencies {
     androidTestImplementation(libs.mockwebserver)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.kotlinx.coroutines.test)
+    androidTestImplementation(libs.mockito.core)
+
     testImplementation(libs.junit.jupiter)
     testImplementation("junit:junit:4.12")
     testImplementation("junit:junit:4.12")
