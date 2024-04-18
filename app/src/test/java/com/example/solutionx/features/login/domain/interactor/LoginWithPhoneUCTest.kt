@@ -27,7 +27,7 @@ class LoginWithPhoneUCTest {
 
     @Test
     fun invokeCallsRepositoryMethodsAndReturnsExpectedResult() = runTest {
-        val loginRequest = LoginRequest(PhoneRequest("002","01110964776"), "testPassword")
+        val loginRequest = LoginRequest(PhoneRequest("002", "01110964776"), "testPassword")
         val expectedLoginResponse = LoginResponse("testToken", User(1, "testEmail", "testPhone"))
         loginRepository.loginResponse = expectedLoginResponse
 
@@ -45,7 +45,7 @@ class LoginWithPhoneUCTest {
     @Test
     fun invokeReturnsFailureWhenLoginFailsDueToIncorrectCredentials() = runTest {
 
-        val loginRequest = LoginRequest(PhoneRequest("002","01110964776"), "wrongPassword")
+        val loginRequest = LoginRequest(PhoneRequest("002", "01110964776"), "wrongPassword")
         loginRepository.loginResponse = null // Simulate login failure
 
 
@@ -57,13 +57,44 @@ class LoginWithPhoneUCTest {
         assertTrue(lastResult is Resource.Failure)
     }
 
+    @Test
+    fun invokeReturnsFailureWhenLoginFailsDueToIncorrectPhone() = runTest {
+
+        val loginRequest = LoginRequest(PhoneRequest("002", "01110964777"), "testPassword")
+        loginRepository.loginResponse = null // Simulate login failure
+
+        val result = mutableListOf<Resource<LoginResponse>>()
+
+        loginWithPhoneUC.invoke(loginRequest).collect { result.add(it) }
+
+        val lastResult = result.last()
+
+        assertTrue(lastResult is Resource.Failure)
+
+    }
+
+    @Test
+    fun invokeReturnsFailureWhenLoginFailsDueToIncorrectCountryCode() = runTest {
+
+        val loginRequest = LoginRequest(PhoneRequest("003", "01110964776"), "testPassword")
+        loginRepository.loginResponse = null // Simulate login failure
+
+        val result = mutableListOf<Resource<LoginResponse>>()
+
+        loginWithPhoneUC.invoke(loginRequest).collect { result.add(it) }
+
+        val lastResult = result.last()
+
+        assertTrue(lastResult is Resource.Failure)
+    }
+
 
 
 
     @Test
     fun invokeReturnsFailureWhenThereIsANetworkError() = runTest {
 
-        val loginRequest = LoginRequest(PhoneRequest("002","01110964776"), "testPassword")
+        val loginRequest = LoginRequest(PhoneRequest("002", "01110964776"), "testPassword")
         loginRepository.loginResponse = null // Simulate network error
 
 
