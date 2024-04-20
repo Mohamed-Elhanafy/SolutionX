@@ -17,8 +17,12 @@ internal class LocalDataSource(
 ) : ILocalDataSource {
 
 
-
     override suspend fun saveLogin(loginResponse: LoginResponseEntity) {
+        //check if the response is empty
+        if (loginResponse.accessToken.isEmpty() || loginResponse.user.email.isEmpty()) {
+            keyValueStorage.save(IS_USER_LOGGED_IN, false.toString())
+            return
+        }
         val userJson = gson.toJson(loginResponse.user)
         val (userIv, encryptedUser) = keystoreUtils.encrypt(userJson)
         val encryptedUserString = Base64.getEncoder().encodeToString(encryptedUser)
@@ -38,13 +42,28 @@ internal class LocalDataSource(
     }
 
     override suspend fun getAccessToken(): String {
+
         val encryptedAccessTokenString = keyValueStorage.get<String, String>(ACCESS_TOKEN_ENCRYPT)
         val accessTokenIvString = keyValueStorage.get<String, String>(ACCESS_TOKEN_IV)
 
-        val encryptedAccessToken = Base64.getDecoder().decode(encryptedAccessTokenString)
-        val accessTokenIv = Base64.getDecoder().decode(accessTokenIvString)
+        if (encryptedAccessTokenString.isBlank() || accessTokenIvString.isBlank()) {
+            throw IllegalStateException("Access token or IV is empty")
+        }
 
-        return keystoreUtils.decrypt(accessTokenIv, encryptedAccessToken)
+        val encryptedAccessToken = try {
+            Base64.getDecoder().decode(encryptedAccessTokenString)
+        } catch (e: IllegalArgumentException) {
+            throw IllegalStateException("Access token is not a valid Base64 encoded string")
+        }
+
+        val accessTokenIv = try {
+            Base64.getDecoder().decode(accessTokenIvString)
+        } catch (e: IllegalArgumentException) {
+            throw IllegalStateException("Access token IV is not a valid Base64 encoded string")
+        }
+
+        return  keystoreUtils.decrypt(accessTokenIv, encryptedAccessToken)
+
     }
 
     override suspend fun getUser(): UserEntity {
@@ -55,6 +74,9 @@ internal class LocalDataSource(
         val userIv = Base64.getDecoder().decode(userIvString)
 
         val userJson = keystoreUtils.decrypt(userIv, encryptedUser)
+        if (userJson.isNullOrEmpty()) {
+            throw IllegalStateException("Decrypted user data is null or empty")
+        }
         return gson.fromJson(userJson, UserEntity::class.java)
     }
 
