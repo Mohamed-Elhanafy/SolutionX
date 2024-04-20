@@ -1,6 +1,7 @@
 package com.example.solutionx.features.login.di
 
 import android.content.Context
+import com.example.solutionx.android.helpers.security.KeystoreUtils
 import com.example.solutionx.common.data.repository.remote.RetrofitApi
 import com.example.solutionx.features.login.data.repositoty.local.LocalDataSource
 import com.example.solutionx.features.login.data.repositoty.remote.RemoteDataSource
@@ -33,7 +34,8 @@ internal object LoginDiModule {
     ): ILoginRepository {
         return LoginRepository(
             RemoteDataSource(retrofitApi),
-            LocalDataSource(keyValueStorage, Gson())
+            LocalDataSource(keyValueStorage, Gson() , KeystoreUtils
+            )
         )
     }
 
@@ -46,7 +48,7 @@ internal object LoginDiModule {
     fun providesLocalDataSource(
         keyValueStorage: KeyValueStorage
     ): ILocalDataSource {
-        return LocalDataSource(keyValueStorage, Gson())
+        return LocalDataSource(keyValueStorage, Gson() , KeystoreUtils)
     }
 
     //provide user preferences

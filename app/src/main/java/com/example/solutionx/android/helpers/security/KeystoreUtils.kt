@@ -2,21 +2,19 @@ package com.example.solutionx.android.helpers.security
 
 import android.security.keystore.KeyGenParameterSpec
 import android.security.keystore.KeyProperties
-import android.util.Base64
 import java.security.KeyStore
 import javax.crypto.Cipher
 import javax.crypto.KeyGenerator
 import javax.crypto.SecretKey
 import javax.crypto.spec.GCMParameterSpec
 
-object KeystoreUtils {
+object KeystoreUtils: IKeystoreUtils {
     private const val ANDROID_KEYSTORE = "AndroidKeyStore"
     private const val AES_GCM_NOPADDING = "AES/GCM/NoPadding"
 
     private const val KEY_ALIAS = "my_key_alias"
 
-    @JvmStatic
-    fun getSecretKey(): SecretKey {
+    override fun getSecretKey(): SecretKey {
         val keystore = KeyStore.getInstance(ANDROID_KEYSTORE)
         keystore.load(null)
 
@@ -40,7 +38,7 @@ object KeystoreUtils {
         return keystore.getKey(KEY_ALIAS, null) as SecretKey
     }
 
-    fun encrypt(input: String): Pair<ByteArray, ByteArray> {
+    override fun encrypt(input: String): Pair<ByteArray, ByteArray> {
         val cipher = Cipher.getInstance(AES_GCM_NOPADDING)
         cipher.init(Cipher.ENCRYPT_MODE, getSecretKey())
         val iv = cipher.iv
@@ -48,7 +46,7 @@ object KeystoreUtils {
         return Pair(iv, encrypted)
     }
 
-    fun decrypt(iv: ByteArray, encrypted: ByteArray): String {
+    override fun decrypt(iv: ByteArray, encrypted: ByteArray): String {
         val cipher = Cipher.getInstance(AES_GCM_NOPADDING)
         val spec = GCMParameterSpec(128, iv)  // AlgorithmParameterSpec
         cipher.init(Cipher.DECRYPT_MODE, getSecretKey(), spec)
