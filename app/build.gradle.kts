@@ -80,12 +80,11 @@ dependencies {
 
     testImplementation(libs.junit.jupiter)
     testImplementation("junit:junit:4.12")
-    testImplementation("junit:junit:4.12")
     testImplementation(libs.junit)
     testImplementation(libs.truth)
     testImplementation(libs.junit)
     testImplementation(libs.mockito.core)
-    testImplementation(libs.mockito.kotlin)
+    testImplementation(libs.mockito.kotlin )
     testImplementation(libs.kotlinx.coroutines.test)
 
 
