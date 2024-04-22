@@ -1,4 +1,4 @@
-package com.example.solutionx.presentation.screens
+package com.example.solutionx.presentation.screens.login
 
 import am.leon.utilities.android.helpers.logging.LoggerFactory
 import androidx.lifecycle.ViewModel

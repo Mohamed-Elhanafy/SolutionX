@@ -101,5 +101,9 @@ dependencies {
     //dataStore
     implementation(libs.datastore)
 
+    //workManager
+    implementation(libs.androidx.work.runtime.ktx)
+    androidTestImplementation(libs.androidx.work.testing)
+
 
 }
