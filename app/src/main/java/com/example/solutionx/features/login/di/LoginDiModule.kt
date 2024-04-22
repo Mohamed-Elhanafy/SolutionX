@@ -1,10 +1,9 @@
 package com.example.solutionx.features.login.di
 
 import android.content.Context
-import com.example.solutionx.common.data.repository.remote.RetrofitApi
-import com.example.solutionx.features.login.data.repositoty.local.LocalDataSource
-import com.example.solutionx.features.login.data.repositoty.remote.RemoteDataSource
-import com.example.solutionx.features.login.data.repositoty.LoginRepository
+import com.example.solutionx.features.login.data.repository.local.LocalDataSource
+import com.example.solutionx.features.login.data.repository.remote.RemoteDataSource
+import com.example.solutionx.features.login.data.repository.LoginRepository
 import com.example.solutionx.common.data.repository.local.DataStoreStorage
 import com.example.solutionx.features.login.domain.interactor.LoginWithEmailUC
 import com.example.solutionx.features.login.domain.interactor.LoginWithPhoneUC
@@ -14,6 +13,8 @@ import com.example.solutionx.features.login.domain.repository.ILoginRepository
 import com.example.solutionx.common.domain.repository.local.KeyValueStorage
 import com.example.solutionx.common.domain.repository.remote.IRestApiNetworkProvider
 import com.example.solutionx.features.login.domain.repository.remote.IRemoteDataSource
+import com.example.solutionx.features.saveList.domain.interactor.SaveListValuesUC
+import com.example.solutionx.features.saveList.domain.repository.ISaveListRepository
 import com.google.gson.Gson
 import dagger.Module
 import dagger.Provides
@@ -49,11 +50,13 @@ internal object LoginDiModule {
         return LocalDataSource(keyValueStorage, Gson())
     }
 
+/*
     //provide user preferences
     @Provides
     fun provideDataStoreStorage(@ApplicationContext context: Context): KeyValueStorage {
         return DataStoreStorage(context)
     }
+*/
 
 
     @Provides
@@ -75,3 +78,4 @@ internal object LoginDiModule {
 
 
 }
+

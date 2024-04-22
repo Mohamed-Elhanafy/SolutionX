@@ -1,4 +1,4 @@
-package com.example.solutionx.features.login.data.repositoty.local
+package com.example.solutionx.features.login.data.repository.local
 
 import am.leon.utilities.android.helpers.logging.LoggerFactory
 import android.util.Base64

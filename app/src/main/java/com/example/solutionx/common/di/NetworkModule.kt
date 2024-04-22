@@ -2,8 +2,10 @@ package com.example.solutionx.common.di
 
 import android.content.Context
 import com.example.solutionx.common.data.constants.Constants.BASE_URL
+import com.example.solutionx.common.data.repository.local.DataStoreStorage
 import com.example.solutionx.common.data.repository.remote.RetrofitApi
 import com.example.solutionx.common.data.repository.remote.RetrofitRestApiProvider
+import com.example.solutionx.common.domain.repository.local.KeyValueStorage
 import com.example.solutionx.common.domain.repository.remote.IRestApiNetworkProvider
 import dagger.Module
 import dagger.Provides
@@ -54,5 +56,11 @@ object NetworkModule {
             .baseUrl(BASE_URL)
             .client(okHttpClient)
             .build().create(RetrofitApi::class.java)
+
+
+    @Provides
+    fun provideDataStoreStorage(@ApplicationContext context: Context): KeyValueStorage {
+        return DataStoreStorage(context)
+    }
 
 }
