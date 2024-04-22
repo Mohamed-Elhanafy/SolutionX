@@ -10,6 +10,11 @@ import kotlinx.coroutines.test.runTest
 import org.junit.Before
 import org.junit.Test
 
+
+/*
+test cases
+1. login with valid phone returns expected result
+* */
 class RemoteDataSourceTest {
 
     private lateinit var provider: FakeRestApiNetworkProvider
@@ -23,7 +28,7 @@ class RemoteDataSourceTest {
 
     @Test
     fun loginWithPhoneReturnsExpectedResult() = runTest {
-        val loginRequest = LoginRequest(PhoneRequest("002","100100100"), "testCode")
+        val loginRequest = LoginRequest(PhoneRequest("002", "100100100"), "testCode")
         val expectedResponse = LoginResponseDto("testToken", null)
 
         provider.postResponse = expectedResponse
@@ -36,7 +41,7 @@ class RemoteDataSourceTest {
 
     @Test
     fun loginWithPhoneReturnsNullWhenProviderReturnsNull() = runTest {
-        val loginRequest = LoginRequest(PhoneRequest("002","100100100"), "testCode")
+        val loginRequest = LoginRequest(PhoneRequest("002", "100100100"), "testCode")
         val expectedResponse = null
 
         provider.postResponse = expectedResponse
@@ -45,7 +50,6 @@ class RemoteDataSourceTest {
 
         assertEquals(expectedResponse, result)
     }
-
 
 
 

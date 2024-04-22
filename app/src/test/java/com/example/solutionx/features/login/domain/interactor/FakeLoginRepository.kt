@@ -1,4 +1,4 @@
-package com.example.solutionx.features.login.data.repositoty
+package com.example.solutionx.features.login.domain.interactor
 
 
 import com.example.solutionx.features.login.data.model.request.LoginRequest

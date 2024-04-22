@@ -4,10 +4,8 @@ package com.example.solutionx.features.login.domain.interactor
 import com.example.solutionx.common.data.models.Resource
 import com.example.solutionx.features.login.data.model.request.LoginRequest
 import com.example.solutionx.features.login.data.model.request.PhoneRequest
-import com.example.solutionx.features.login.data.repositoty.FakeLoginRepository
 import com.example.solutionx.features.login.domain.models.LoginResponse
 import com.example.solutionx.features.login.domain.models.User
-import kotlinx.coroutines.test.runBlockingTest
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
@@ -74,7 +72,7 @@ class LoginWithPhoneUCTest {
     }
 
     @Test
-    fun invokeReturnsFailureWhenLoginFailsDueToIncorrectCountryCode() = runTest {
+    fun invokeReturnsFailureWhenLoginFailsDueToNullCountryCode() = runTest {
 
         val loginRequest = LoginRequest(PhoneRequest("003", "01110964776"), "testPassword")
         loginRepository.loginResponse = null // Simulate login failure
@@ -87,9 +85,6 @@ class LoginWithPhoneUCTest {
 
         assertTrue(lastResult is Resource.Failure)
     }
-
-
-
 
     @Test
     fun invokeReturnsFailureWhenThereIsANetworkError() = runTest {

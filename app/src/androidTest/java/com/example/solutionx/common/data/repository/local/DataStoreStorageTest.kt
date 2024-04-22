@@ -10,18 +10,20 @@ import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 
+
+
+//todo fix naming convention in this class
+
 @RunWith(AndroidJUnit4::class)
 class DataStoreStorageAndroidTest {
-    private lateinit var dataStoreStorage: DataStoreStorage
-    lateinit var context: Context
-
     @Before
     fun setup() {
-         context = ApplicationProvider.getApplicationContext<Context>()
+        context = ApplicationProvider.getApplicationContext<Context>()
         dataStoreStorage = DataStoreStorage.getInstance(context)
     }
+    private lateinit var dataStoreStorage: DataStoreStorage
 
-
+    lateinit var context: Context
 
 
     @Test
@@ -36,7 +38,6 @@ class DataStoreStorageAndroidTest {
             assertEquals(value, retrievedValue)
         }
     }
-
     @Test
     fun testSaveWithSameKey() {
         runBlocking {
@@ -54,8 +55,6 @@ class DataStoreStorageAndroidTest {
             assertEquals(value2, retrievedValue2)
         }
     }
-
-
     @Test(expected = IllegalArgumentException::class)
     fun testSaveAndGetWithNonExistentKey() {
         runBlocking {
@@ -63,8 +62,6 @@ class DataStoreStorageAndroidTest {
             dataStoreStorage.get<String, String>(nonExistentKey)
         }
     }
-
-
     @Test
     fun testSaveAndGetWithDifferentTypes() {
         runBlocking {
@@ -87,7 +84,6 @@ class DataStoreStorageAndroidTest {
             assertEquals(booleanValue, retrievedBooleanValue)
         }
     }
-
     @Test(expected = IllegalArgumentException::class)
     fun testSaveWithUnsupportedType() {
         runBlocking {
