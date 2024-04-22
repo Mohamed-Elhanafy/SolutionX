@@ -17,28 +17,38 @@ class ListViewModel @Inject constructor(
     private val saveListValuesUC: SaveListValuesUC
 ) : ViewModel() {
 
-    val name = "John"
 
     private val _state = MutableStateFlow<ListViewState>(ListViewState.Idle)
     val state: StateFlow<ListViewState> get() = _state
 
 
-    init {
-        saveListValues()
+
+
+    fun pressesIntent(intent: ListIntent) {
+        when (intent) {
+            is ListIntent.SaveListValues -> saveListValues(intent)
+            is ListIntent.TranslateListValues -> translateListValues(intent.names)
+        }
     }
-    fun saveListValues() {
-        val names = listOf("John", "Doe")
+
+    private fun translateListValues(names: List<String>) {
+        TODO("Not yet implemented")
+    }
+
+    private fun saveListValues(intent: ListIntent.SaveListValues) {
         viewModelScope.launch {
-            saveListValuesUC.invoke(names).collect{ resource ->
-                when(resource) {
+            saveListValuesUC.invoke(intent.names).collect { resource ->
+                when (resource) {
                     is Resource.Loading -> {
                         logger.info("Loading")
-                        _state.value  = ListViewState.Loading
+                        _state.value = ListViewState.Loading
                     }
+
                     is Resource.Success -> {
                         logger.info("Success")
                         _state.value = ListViewState.Success(resource.data)
                     }
+
                     is Resource.Failure -> {
                         logger.error("Error")
                         _state.value = ListViewState.Error(resource.exception)

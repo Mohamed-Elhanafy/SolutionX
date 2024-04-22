@@ -35,7 +35,9 @@ class ListFragment : Fragment() {
 
 
         setNames.setOnClickListener {
+            val intent = ListIntent.SaveListValues(listOf("John", "Doe"))
 
+            viewModel.pressesIntent(intent)
 
         }
 
