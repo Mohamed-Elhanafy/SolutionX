@@ -1,14 +1,14 @@
 package com.example.solutionx.features.saveList.data.repository.local
 
 import com.example.solutionx.common.domain.repository.local.KeyValueStorage
-import com.example.solutionx.features.saveList.domain.repository.local.ISaveListLocalDataSource
+import com.example.solutionx.features.saveList.domain.repository.local.ILocalDataSource
 import com.google.gson.Gson
 import javax.inject.Inject
 
-internal class SaveListLocalDataSource @Inject constructor (
+internal class LocalDataSource @Inject constructor (
     private val keyValueStorage: KeyValueStorage,
     private val gson: Gson
-) : ISaveListLocalDataSource {
+) : ILocalDataSource {
     override suspend fun saveNamesList(names: List<String>) {
         keyValueStorage.save(NAMES_LIST, gson.toJson(names))
     }

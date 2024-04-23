@@ -1,6 +1,10 @@
 package com.example.solutionx.common.di
 
+import am.leon.utilities.android.helpers.logging.LoggerFactory
 import android.content.Context
+import androidx.startup.Initializer
+import androidx.work.Configuration
+import androidx.work.WorkManager
 import com.example.solutionx.common.data.constants.Constants.BASE_URL
 import com.example.solutionx.common.data.repository.local.DataStoreStorage
 import com.example.solutionx.common.data.repository.remote.RetrofitApi
@@ -63,4 +67,12 @@ object NetworkModule {
         return DataStoreStorage(context)
     }
 
+    @Provides
+    fun provideApplicationContext(@ApplicationContext context: Context): Context {
+        return context
+    }
+
+
 }
+
+

@@ -5,15 +5,28 @@ import am.leon.utilities.android.helpers.logging.writers.DummyWriter
 import am.leon.utilities.android.helpers.logging.writers.FileWriter
 import am.leon.utilities.android.helpers.logging.writers.LogcatWriter
 import android.app.Application
+import androidx.hilt.work.HiltWorkerFactory
 import com.example.solutionx.BuildConfig
 import com.example.solutionx.android.helpers.logger.LoggerProvider
 import dagger.hilt.android.HiltAndroidApp
+import javax.inject.Inject
+import androidx.work.Configuration
 
 @HiltAndroidApp
-class BaseApp : Application() {
+class BaseApp : Application(), Configuration.Provider {
+
+
+    @Inject
+    lateinit var workerFactory: HiltWorkerFactory
+
+    override val workManagerConfiguration: Configuration
+        get() = Configuration.Builder()
+            .setWorkerFactory(workerFactory)
+            .build()
+
+
     override fun onCreate() {
         super.onCreate()
         LoggerProvider.provideLogger()
     }
-
 }

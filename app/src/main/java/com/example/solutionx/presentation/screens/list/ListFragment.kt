@@ -22,8 +22,6 @@ class ListFragment : Fragment() {
 
     private val viewModel: ListViewModel by viewModels()
 
-    //hilt viewmodel
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -32,13 +30,17 @@ class ListFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_list, container, false)
 
         val setNames = view.findViewById<Button>(R.id.set_names)
+        val translateNames = view.findViewById<Button>(R.id.update_list)
 
 
         setNames.setOnClickListener {
-            val intent = ListIntent.SaveListValues(listOf("John", "Doe"))
-
+            val intent = ListIntent.SaveListValues(listOf("mohamed", "ahmed","hamed"))
             viewModel.pressesIntent(intent)
+        }
 
+        translateNames.setOnClickListener {
+            val intent = ListIntent.TranslateListValues(listOf("محمد", "احمد","حامد"))
+            viewModel.pressesIntent(intent)
         }
 
         return view
@@ -58,9 +60,7 @@ class ListFragment : Fragment() {
                     }
 
                     is ListViewState.Success -> {
-                        // Handle success
-                        val names: List<String> = state.data
-                        logger.info(names[0])
+                        logger.info(state.data.size.toString())
                     }
 
                     is ListViewState.Error -> {
@@ -80,9 +80,7 @@ class ListFragment : Fragment() {
 
     }
 
-    private fun handleState() {
-        TODO("Not yet implemented")
-    }
+
 
 
     companion object {
