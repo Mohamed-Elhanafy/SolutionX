@@ -2,11 +2,15 @@ package com.example.solutionx.presentation.screens.list
 
 import am.leon.utilities.android.helpers.logging.LoggerFactory
 import android.app.Application
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.asFlow
 import androidx.lifecycle.viewModelScope
 import androidx.work.ExistingWorkPolicy
+import androidx.work.OneTimeWorkRequest
 import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkInfo
 import androidx.work.WorkManager
@@ -33,15 +37,14 @@ class ListViewModel @Inject constructor(
 
     private val workManager: WorkManager = WorkManager.getInstance(application)
 
-    private val _state = MutableStateFlow<ListViewState>(ListViewState.Idle)
 
-
-    val state: StateFlow<ListViewState> get() = _state
+    var workMessage: MutableStateFlow<WorkInfo?> = MutableStateFlow(null)
 
 
     fun pressesIntent(intent: ListIntent) {
         when (intent) {
             is ListIntent.SaveListValues -> saveListValues(intent)
+
             is ListIntent.TranslateListValues -> translateListValues(intent.names)
         }
     }
@@ -52,12 +55,11 @@ class ListViewModel @Inject constructor(
         )
 
         val workRequest = OneTimeWorkRequestBuilder<TranslateListWorker>()
-            .setInputData(data)
-            .build()
+            .setInputData(data).build()
 
-        val workInfo: LiveData<WorkInfo> = workManager.getWorkInfoByIdLiveData(workRequest.id)
 
-        logger.info("workInfo: $workInfo")
+        observeWorkInfo(workRequest)
+
 
 
         workManager.beginUniqueWork(
@@ -66,8 +68,21 @@ class ListViewModel @Inject constructor(
             workRequest
         ).enqueue()
 
+        getNamesList()
+    }
 
+    private fun observeWorkInfo(workRequest: OneTimeWorkRequest) {
 
+        workMessage.value = workManager.getWorkInfoByIdLiveData(workRequest.id).value
+
+        viewModelScope.launch {
+            workManager.getWorkInfoByIdLiveData(workRequest.id).asFlow().collect { workInfo ->
+                if (workInfo != null && workInfo.state.isFinished) {
+                    workMessage.value = workInfo
+                    logger.info("workInfo: ${workInfo.outputData.getString(TranslateListWorker.KEY_RESULT_MESSAGE)}")
+                }
+            }
+        }
     }
 
     private fun saveListValues(intent: ListIntent.SaveListValues) {
@@ -83,20 +98,20 @@ class ListViewModel @Inject constructor(
         viewModelScope.launch {
             saveListValuesUC.getNamesList().collect { resource ->
                 when (resource) {
-                    is Resource.Loading -> {
-                        logger.info("Loading")
-                        _state.value = ListViewState.Loading
-                    }
-
                     is Resource.Success -> {
-                        logger.info("Success")
-                        logger.info(resource.data.size.toString())
-                        _state.value = ListViewState.Success(resource.data)
+                        val data = resource.data
+                        for (name in data) {
+                            logger.info(name)
+                        }
                     }
 
                     is Resource.Failure -> {
-                        logger.error("Error")
-                        _state.value = ListViewState.Error(resource.exception)
+                        val error = resource.exception
+                        logger.error(error.message.toString())
+                    }
+
+                    else -> {
+                        //logger.info("Loading")
                     }
                 }
             }

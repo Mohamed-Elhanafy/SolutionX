@@ -11,6 +11,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.example.solutionx.R
 import com.example.solutionx.features.login.domain.models.LoginResponse
+import com.example.solutionx.features.saveList.domain.interactor.TranslateListWorker
 import com.example.solutionx.presentation.screens.login.LoginFragment
 import com.example.solutionx.presentation.screens.login.LoginViewState
 import dagger.hilt.android.AndroidEntryPoint
@@ -41,6 +42,7 @@ class ListFragment : Fragment() {
         translateNames.setOnClickListener {
             val intent = ListIntent.TranslateListValues(listOf("محمد", "احمد","حامد"))
             viewModel.pressesIntent(intent)
+
         }
 
         return view
@@ -50,33 +52,15 @@ class ListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-        // Observe the state
+
         viewLifecycleOwner.lifecycleScope.launch {
-            viewModel.state.collect { state ->
-                when (state) {
-                    is ListViewState.Loading -> {
-                        // Show loading
-                        logger.info("Loading")
-                    }
-
-                    is ListViewState.Success -> {
-                        logger.info(state.data.size.toString())
-                    }
-
-                    is ListViewState.Error -> {
-                        // Handle error
-                        val error: Throwable = state.error
-                        logger.error(error.message.toString())
-                    }
-
-                    is ListViewState.Idle -> {
-                        // Handle idle
-                    }
+            viewModel.workMessage.collect { workInfo ->
+                if (workInfo != null && workInfo.state.isFinished) {
+                    val resultMessage = workInfo.outputData.getString(TranslateListWorker.KEY_RESULT_MESSAGE)
+                    logger.info("workInfo: $resultMessage")
                 }
-
             }
-
-            }
+        }
 
     }
 

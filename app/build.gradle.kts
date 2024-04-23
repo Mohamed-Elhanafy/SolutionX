@@ -107,5 +107,12 @@ dependencies {
     implementation(libs.androidx.work.runtime.ktx)
     androidTestImplementation(libs.androidx.work.testing)
 
+    implementation("androidx.hilt:hilt-work:1.2.0")
+    ksp("androidx.hilt:hilt-compiler:1.2.0")
+
+
+    //livedata runtime
+    implementation ("androidx.lifecycle:lifecycle-livedata-ktx:1.4.3")
+    implementation ("androidx.compose.runtime:runtime-livedata:1.6.6")
 
 }

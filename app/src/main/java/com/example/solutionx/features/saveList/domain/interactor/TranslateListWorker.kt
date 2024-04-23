@@ -25,6 +25,7 @@ class TranslateListWorker @AssistedInject constructor(
             if (names != null) {
 
                 saveListUC.saveNamesList(names.toList())
+
                 Result.success(
                     workDataOf(KEY_RESULT_MESSAGE to "the list has been updated successfully")
                 )
