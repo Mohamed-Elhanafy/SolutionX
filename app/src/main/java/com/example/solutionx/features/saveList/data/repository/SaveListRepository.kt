@@ -4,11 +4,14 @@ import com.example.solutionx.features.saveList.domain.repository.ISaveListReposi
 import com.example.solutionx.features.saveList.domain.repository.local.ILocalDataSource
 import javax.inject.Inject
 
-internal class SaveListRepository @Inject constructor (
+internal class SaveListRepository @Inject constructor(
     private val localDataSource: ILocalDataSource
 ) : ISaveListRepository {
     override suspend fun saveNamesList(names: List<String>) {
-        localDataSource.saveNamesList(names)
+        if (names.isNotEmpty()) {
+            localDataSource.saveNamesList(names)
+        }
+
     }
 
     override suspend fun getNamesList(): List<String> {
