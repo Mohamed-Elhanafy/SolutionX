@@ -5,12 +5,14 @@ import com.example.solutionx.features.saveList.domain.repository.local.ILocalDat
 import com.google.gson.Gson
 import javax.inject.Inject
 
-internal class LocalDataSource @Inject constructor (
+internal class LocalDataSource @Inject constructor(
     private val keyValueStorage: KeyValueStorage,
     private val gson: Gson
 ) : ILocalDataSource {
     override suspend fun saveNamesList(names: List<String>) {
-        keyValueStorage.save(NAMES_LIST, gson.toJson(names))
+        if (names.isNotEmpty()) {
+            keyValueStorage.save(NAMES_LIST, Gson().toJson(names))
+        }
     }
 
     override suspend fun getNamesList(): List<String> {

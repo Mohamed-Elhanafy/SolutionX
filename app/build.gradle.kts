@@ -73,8 +73,11 @@ dependencies {
     implementation(libs.androidx.hilt.common)
     implementation(libs.androidx.hilt.work)
     testImplementation(libs.junit)
+    testImplementation("org.testng:testng:6.9.6")
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    testImplementation(libs.mockito.core)
+    testImplementation(libs.mockito.kotlin)
 
 
     //hilt
@@ -89,6 +92,7 @@ dependencies {
     //coroutines
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.kotlinx.coroutines.core)
+    testImplementation( libs.kotlinx.coroutines.test)
 
     //ktor client
     implementation(libs.ktor.client.okhttp)
