@@ -2,11 +2,8 @@ package com.example.solutionx.presentation.screens.list
 
 import am.leon.utilities.android.helpers.logging.LoggerFactory
 import android.app.Application
-import androidx.compose.runtime.livedata.observeAsState
 import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+
 import androidx.lifecycle.asFlow
 import androidx.lifecycle.viewModelScope
 import androidx.work.ExistingWorkPolicy
@@ -57,7 +54,7 @@ class ListViewModel @Inject constructor(
         observeWorkInfo(workRequest)
 
         workManager.beginUniqueWork(
-            "TranslateListWorker",
+            WORKER_NAME,
             ExistingWorkPolicy.KEEP,
             workRequest
         ).enqueue()
@@ -115,5 +112,6 @@ class ListViewModel @Inject constructor(
 
     companion object {
         private val logger = LoggerFactory.getLogger(ListViewModel::class.java)
+        const val  WORKER_NAME= "TranslateListWorker"
     }
 }

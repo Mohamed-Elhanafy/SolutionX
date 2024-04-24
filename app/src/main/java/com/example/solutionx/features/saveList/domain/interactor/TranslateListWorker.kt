@@ -19,24 +19,22 @@ class TranslateListWorker @AssistedInject constructor(
     @Assisted params: WorkerParameters,
     private val saveListUC: SaveListValuesUC
 ) : CoroutineWorker(context, params) {
+
     override suspend fun doWork(): Result {
         return withContext(Dispatchers.IO) {
-            val names = inputData.getStringArray(KEY_NAMES)
-            if (names != null) {
+            try {
+                val names = inputData.getStringArray(KEY_NAMES)?.toList() ?: listOf()
 
-                saveListUC.saveNamesList(names.toList())
+                saveListUC.saveNamesList(names)
 
                 Result.success(
                     workDataOf(KEY_RESULT_MESSAGE to "the list has been updated successfully")
                 )
-
-            } else {
-                logger.error("error in translation list worker")
+            } catch (e: Exception) {
+                logger.error("Error in TranslateListWorker: ${e.message}")
                 Result.failure()
             }
         }
-
-
     }
 
 

@@ -11,8 +11,9 @@ class SaveListValuesUC @Inject constructor(
 ) {
 
     suspend fun saveNamesList(names: List<String>) {
+        if (names.isNotEmpty()){
             saveListRepository.saveNamesList(names)
-
+        }
     }
 
 

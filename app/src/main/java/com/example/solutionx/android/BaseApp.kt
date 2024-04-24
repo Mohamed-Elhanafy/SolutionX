@@ -5,6 +5,7 @@ import am.leon.utilities.android.helpers.logging.writers.DummyWriter
 import am.leon.utilities.android.helpers.logging.writers.FileWriter
 import am.leon.utilities.android.helpers.logging.writers.LogcatWriter
 import android.app.Application
+import android.util.Log
 import androidx.hilt.work.HiltWorkerFactory
 import com.example.solutionx.BuildConfig
 import com.example.solutionx.android.helpers.logger.LoggerProvider
@@ -21,6 +22,7 @@ class BaseApp : Application(), Configuration.Provider {
 
     override val workManagerConfiguration: Configuration
         get() = Configuration.Builder()
+            .setMinimumLoggingLevel(Log.DEBUG)
             .setWorkerFactory(workerFactory)
             .build()
 
