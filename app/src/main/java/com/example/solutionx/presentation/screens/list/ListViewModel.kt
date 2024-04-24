@@ -29,7 +29,6 @@ import javax.inject.Inject
 @HiltViewModel
 class ListViewModel @Inject constructor(
     private val saveListValuesUC: SaveListValuesUC,
-    //private val workManager: WorkManager,
     application: Application,
 ) : AndroidViewModel(
     application
@@ -37,14 +36,12 @@ class ListViewModel @Inject constructor(
 
     private val workManager: WorkManager = WorkManager.getInstance(application)
 
-
     var workMessage: MutableStateFlow<WorkInfo?> = MutableStateFlow(null)
 
 
     fun pressesIntent(intent: ListIntent) {
         when (intent) {
             is ListIntent.SaveListValues -> saveListValues(intent)
-
             is ListIntent.TranslateListValues -> translateListValues(intent.names)
         }
     }
@@ -57,10 +54,7 @@ class ListViewModel @Inject constructor(
         val workRequest = OneTimeWorkRequestBuilder<TranslateListWorker>()
             .setInputData(data).build()
 
-
         observeWorkInfo(workRequest)
-
-
 
         workManager.beginUniqueWork(
             "TranslateListWorker",
@@ -68,7 +62,6 @@ class ListViewModel @Inject constructor(
             workRequest
         ).enqueue()
 
-        getNamesList()
     }
 
     private fun observeWorkInfo(workRequest: OneTimeWorkRequest) {
@@ -80,6 +73,7 @@ class ListViewModel @Inject constructor(
                 if (workInfo != null && workInfo.state.isFinished) {
                     workMessage.value = workInfo
                     logger.info("workInfo: ${workInfo.outputData.getString(TranslateListWorker.KEY_RESULT_MESSAGE)}")
+                    getNamesList()
                 }
             }
         }
@@ -89,6 +83,7 @@ class ListViewModel @Inject constructor(
         viewModelScope.launch {
 
             saveListValuesUC.saveNamesList(intent.names)
+
             getNamesList()
         }
     }
@@ -111,7 +106,6 @@ class ListViewModel @Inject constructor(
                     }
 
                     else -> {
-                        //logger.info("Loading")
                     }
                 }
             }

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -58,6 +59,7 @@ class ListFragment : Fragment() {
                 if (workInfo != null && workInfo.state.isFinished) {
                     val resultMessage = workInfo.outputData.getString(TranslateListWorker.KEY_RESULT_MESSAGE)
                     logger.info("workInfo: $resultMessage")
+                    Toast.makeText(requireActivity(), resultMessage, Toast.LENGTH_SHORT).show()
                 }
             }
         }

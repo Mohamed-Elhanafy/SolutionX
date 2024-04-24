@@ -12,6 +12,7 @@ class SaveListValuesUC @Inject constructor(
 
     suspend fun saveNamesList(names: List<String>) {
             saveListRepository.saveNamesList(names)
+
     }
 
 
