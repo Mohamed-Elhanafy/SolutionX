@@ -71,7 +71,6 @@ dependencies {
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
     implementation(libs.androidx.hilt.common)
-    implementation(libs.androidx.hilt.work)
     testImplementation(libs.junit)
     testImplementation("org.testng:testng:6.9.6")
     androidTestImplementation(libs.androidx.junit)
@@ -115,11 +114,9 @@ dependencies {
     //workManager
     implementation(libs.androidx.work.runtime.ktx)
     androidTestImplementation(libs.androidx.work.testing)
-    implementation("androidx.hilt:hilt-work:1.2.0")
+    implementation(libs.androidx.hilt.work)
 
 
- /*   //livedata runtime
-    implementation ("androidx.lifecycle:lifecycle-livedata-ktx:1.4.3")
-    implementation ("androidx.compose.runtime:runtime-livedata:1.6.6")*/
+
 
 }

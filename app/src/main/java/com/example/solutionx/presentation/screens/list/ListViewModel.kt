@@ -19,6 +19,7 @@ import com.example.solutionx.features.saveList.domain.interactor.TranslateListWo
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -62,17 +63,14 @@ class ListViewModel @Inject constructor(
     }
 
     private fun observeWorkInfo(workRequest: OneTimeWorkRequest) {
-
-        workMessage.value = workManager.getWorkInfoByIdLiveData(workRequest.id).value
-
         viewModelScope.launch {
-            workManager.getWorkInfoByIdLiveData(workRequest.id).asFlow().collect { workInfo ->
-                if (workInfo != null && workInfo.state.isFinished) {
+            workManager.getWorkInfoByIdLiveData(workRequest.id).asFlow()
+                .filter { it != null && it.state.isFinished }
+                .collect { workInfo ->
                     workMessage.value = workInfo
                     logger.info("workInfo: ${workInfo.outputData.getString(TranslateListWorker.KEY_RESULT_MESSAGE)}")
                     getNamesList()
                 }
-            }
         }
     }
 
