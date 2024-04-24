@@ -1,8 +1,7 @@
-package com.example.solutionx.presentation.screens
+package com.example.solutionx.presentation.screens.login
 
 import am.leon.utilities.android.helpers.logging.LoggerFactory
 import android.os.Bundle
-import android.provider.ContactsContract
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup

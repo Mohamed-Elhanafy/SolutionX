@@ -1,6 +1,5 @@
-package com.example.solutionx.features.login.data.repositoty.remote
+package com.example.solutionx.features.login.data.repository.remote
 
-import com.example.solutionx.common.data.repository.remote.RetrofitApi
 import com.example.solutionx.common.domain.repository.remote.IRestApiNetworkProvider
 import com.example.solutionx.features.login.data.model.dto.LoginResponseDto
 import com.example.solutionx.features.login.data.model.request.LoginRequest

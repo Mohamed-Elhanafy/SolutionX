@@ -1,9 +1,15 @@
 package com.example.solutionx.common.di
 
+import am.leon.utilities.android.helpers.logging.LoggerFactory
 import android.content.Context
+import androidx.startup.Initializer
+import androidx.work.Configuration
+import androidx.work.WorkManager
 import com.example.solutionx.common.data.constants.Constants.BASE_URL
+import com.example.solutionx.common.data.repository.local.DataStoreStorage
 import com.example.solutionx.common.data.repository.remote.RetrofitApi
 import com.example.solutionx.common.data.repository.remote.RetrofitRestApiProvider
+import com.example.solutionx.common.domain.repository.local.KeyValueStorage
 import com.example.solutionx.common.domain.repository.remote.IRestApiNetworkProvider
 import dagger.Module
 import dagger.Provides
@@ -55,4 +61,18 @@ object NetworkModule {
             .client(okHttpClient)
             .build().create(RetrofitApi::class.java)
 
+
+    @Provides
+    fun provideDataStoreStorage(@ApplicationContext context: Context): KeyValueStorage {
+        return DataStoreStorage(context)
+    }
+
+    @Provides
+    fun provideApplicationContext(@ApplicationContext context: Context): Context {
+        return context
+    }
+
+
 }
+
+

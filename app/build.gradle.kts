@@ -70,14 +70,22 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
+    implementation(libs.androidx.hilt.common)
     testImplementation(libs.junit)
+    testImplementation("org.testng:testng:6.9.6")
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    testImplementation(libs.mockito.core)
+    androidTestImplementation(libs.mockito.core)
+    testImplementation(libs.mockito.kotlin)
+    androidTestImplementation(libs.mockito.kotlin)
 
 
     //hilt
     implementation(libs.hilt.android)
     ksp(libs.hilt.android.compiler)
+    androidTestImplementation("com.google.dagger:hilt-android-testing:2.48.1")
+    ksp("androidx.hilt:hilt-compiler:1.2.0")
 
     //lifeCycle
     implementation(libs.lifecycle.viewmodel.ktx)
@@ -87,6 +95,8 @@ dependencies {
     //coroutines
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.kotlinx.coroutines.core)
+    testImplementation( libs.kotlinx.coroutines.test)
+    androidTestImplementation( libs.kotlinx.coroutines.test)
 
     //ktor client
     implementation(libs.ktor.client.okhttp)
@@ -100,6 +110,13 @@ dependencies {
 
     //dataStore
     implementation(libs.datastore)
+
+    //workManager
+    implementation(libs.androidx.work.runtime.ktx)
+    androidTestImplementation(libs.androidx.work.testing)
+    implementation(libs.androidx.hilt.work)
+
+
 
 
 }

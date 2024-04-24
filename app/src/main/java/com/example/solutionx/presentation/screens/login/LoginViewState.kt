@@ -1,4 +1,4 @@
-package com.example.solutionx.presentation.screens
+package com.example.solutionx.presentation.screens.login
 
 import com.example.solutionx.features.login.domain.models.LoginResponse
 
