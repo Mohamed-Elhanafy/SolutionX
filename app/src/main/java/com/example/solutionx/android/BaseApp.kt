@@ -22,7 +22,7 @@ class BaseApp : Application(), Configuration.Provider {
 
     override val workManagerConfiguration: Configuration
         get() = Configuration.Builder()
-            .setMinimumLoggingLevel(Log.DEBUG)
+            .setMinimumLoggingLevel(if (BuildConfig.DEBUG) Log.DEBUG else Log.ERROR)
             .setWorkerFactory(workerFactory)
             .build()
 

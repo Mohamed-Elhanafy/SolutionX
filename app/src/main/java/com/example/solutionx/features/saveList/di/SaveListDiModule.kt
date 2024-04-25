@@ -41,15 +41,6 @@ internal object SaveListDiModule {
     fun provideSaveListValuesUC(saveListRepository: ISaveListRepository): SaveListValuesUC {
         return SaveListValuesUC(saveListRepository)
     }
-    @Provides
-    @Singleton
 
-    fun provideWorkManga(@ApplicationContext context: Context, factory: HiltWorkerFactory ): WorkManager {
-
-        val configuration = Configuration.Builder().setWorkerFactory(factory).build()
-        WorkManager.initialize(context, configuration)
-
-        return WorkManager.getInstance(context)
-    }
 }
 
