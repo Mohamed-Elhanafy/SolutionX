@@ -1,0 +1,1466 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+    <layouts>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/font-ldrtl/app_font_bold.xml">
+        <config>
+          <theme>@style/Theme.SolutionX</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/font-ldrtl/app_font_medium.xml">
+        <config>
+          <theme>@style/Theme.SolutionX</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/font-ldrtl/app_font_regular.xml">
+        <config>
+          <theme>@style/Theme.SolutionX</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/font/app_font_bold.xml">
+        <config>
+          <theme>@style/Theme.SolutionX</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/font/app_font_medium.xml">
+        <config>
+          <theme>@style/Theme.SolutionX</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/font/app_font_regular.xml">
+        <config>
+          <theme>@style/Theme.SolutionX</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+        <config>
+          <theme>@style/Theme.SolutionX</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_list.xml">
+        <config>
+          <theme>@style/Base.Theme.SolutionX</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_login.xml">
+        <config>
+          <theme>@style/Theme.SolutionX</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/item_country.xml">
+        <config>
+          <theme>@style/Base.Theme.SolutionX</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/item_currecny.xml">
+        <config>
+          <theme>@style/Base.Theme.SolutionX</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/item_filter.xml">
+        <config>
+          <theme>@style/Base.Theme.SolutionX</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/navigation/nav_graph.xml">
+        <config>
+          <theme>@style/Theme.SolutionX</theme>
+        </config>
+      </layout>
+    </layouts>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3a391fbe-b47c-4f9f-8ed5-d4b71440cbad" name="Changes" comment="fix files" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\amoha\.android\avd\Pixel_6a_API_34.avd]" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$/app">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="valueResourceFile" />
+        <option value="navigationResourceFile" />
+        <option value="resourceFile" />
+        <option value="Kotlin Enum" />
+        <option value="Kotlin Object" />
+        <option value="layoutResourceFile" />
+        <option value="Kotlin File" />
+        <option value="Kotlin Interface" />
+        <option value="Kotlin Class" />
+        <option value="JUnit4 Test Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="feature/testing" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Mohamed-Elhanafy&quot;
+  }
+}</component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1714305762" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="feature/testing" />
+                    <option name="lastUsedInstant" value="1714303328" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="develop" />
+                    <option name="lastUsedInstant" value="1714303314" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="e62c1f27-8d91-435f-97ec-71504e18740a" />
+        <option name="url" value="https://github.com/Mohamed-Elhanafy/SolutionX.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$USER_HOME$/AppData/Local/Google/AndroidStudio2023.2/device-explorer/Pixel 6a API 34/_/data/data/com.example.solutionx/files/datastore/user_preferences.preferences_pb" root0="SKIP_INSPECTION" />
+    <setting file="file://$USER_HOME$/AppData/Local/Google/AndroidStudio2023.2/device-explorer/Pixel 6a API 34/_/storage/emulated/0/Android/data/com.example.solutionx.logWriter/files/Download/SolutionX/logfile.txt" root0="SKIP_INSPECTION" />
+    <setting file="file://$USER_HOME$/AppData/Local/Google/AndroidStudio2023.2/device-explorer/Pixel 6a API 34/_/storage/self/primary/Download/SolutionX/SolutionXLogFile.txt" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2dAwOR6w7dPoXEe9tOJRdWvbWYm" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit4",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4": "",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_directory_selection": "C:/Users/amoha/AndroidStudioProjects/beta/SolutionX/app/src/test/java/com/example/solutionx/features/saveList/data/repository",
+    "last_opened_file_path": "C:/Users/amoha/AndroidStudioProjects/beta/SolutionX/app/src/main/res/layout",
+    "project.structure.last.edited": "Dependencies",
+    "project.structure.proportion": "0.17",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.splitter.proportion": "0.2066525",
+    "show.migrate.to.gradle.popup": "false"
+  },
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "TEXT"
+    ]
+  }
+}]]></component>
+  <component name="PsdUISettings">
+    <option name="BUILD_VARIANTS_TAB" value="Flavors" />
+    <option name="LAST_EDITED_BUILD_TYPE" value="release" />
+    <option name="LAST_EDITED_FLAVOR_OR_DIMENSION" value="production" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\amoha\AndroidStudioProjects\beta\SolutionX\app\src\main\res\layout" />
+      <recent name="C:\Users\amoha\AndroidStudioProjects\beta\SolutionX\app\src\logCat\res" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\amoha\AndroidStudioProjects\beta\SolutionX\app\src\main\java\com\example\solutionx\utils\logger" />
+      <recent name="C:\Users\amoha\AndroidStudioProjects\beta\SolutionX\app\src\main\java\com\example\solutionx\data\moc" />
+      <recent name="C:\Users\amoha\AndroidStudioProjects\beta\SolutionX\app\src\main\res\font" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="com.example.solutionx.features.login.domain.interactor" />
+      <recent name="com.example.solutionx.features.login.data.repositoty.remote" />
+      <recent name="com.example.solutionx.common.data.repository.local" />
+      <recent name="com.example.solutionx.common.domain.repository.local" />
+      <recent name="com.example.solutionx.common.data.remote" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.example.solutionx.features.saveList.data.repository" />
+      <recent name="com.example.solutionx.features.saveList.data.repository.local" />
+      <recent name="com.example.solutionx.features.saveList.domain.interactor" />
+      <recent name="com.example.solutionx.features.login.data.repositoty.local" />
+      <recent name="com.example.solutionx.features.login.data.repositoty.remote" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android App">
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
+      <option name="CLEAR_APP_STORAGE" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="true" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="INSPECTION_WITHOUT_ACTIVITY_RESTART" value="false" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Hybrid>
+      <Java>
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Java>
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Java/Kotlin Method Sample (legacy)" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="SolutionX.app.main" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
+      <option name="CLEAR_APP_STORAGE" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="true" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="INSPECTION_WITHOUT_ACTIVITY_RESTART" value="false" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Hybrid>
+      <Java>
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Java>
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Java/Kotlin Method Sample (legacy)" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3a391fbe-b47c-4f9f-8ed5-d4b71440cbad" name="Changes" comment="" />
+      <created>1709464158582</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1709464158582</updated>
+    </task>
+    <task id="LOCAL-00034" summary="add repo imp">
+      <option name="closed" value="true" />
+      <created>1710332193877</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1710332193877</updated>
+    </task>
+    <task id="LOCAL-00035" summary="change the mapper ro object">
+      <option name="closed" value="true" />
+      <created>1710332962827</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1710332962827</updated>
+    </task>
+    <task id="LOCAL-00036" summary="change the saveDataSource logic to the useCase">
+      <option name="closed" value="true" />
+      <created>1710530661369</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1710530661369</updated>
+    </task>
+    <task id="LOCAL-00037" summary="adding di">
+      <option name="closed" value="true" />
+      <created>1710671085516</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1710671085516</updated>
+    </task>
+    <task id="LOCAL-00038" summary="finishing up project arch">
+      <option name="closed" value="true" />
+      <created>1711305313768</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1711305313768</updated>
+    </task>
+    <task id="LOCAL-00039" summary="adding retrofit and ktor dependencies">
+      <option name="closed" value="true" />
+      <created>1711305756426</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1711305756426</updated>
+    </task>
+    <task id="LOCAL-00040" summary="adding Parcelize implementation">
+      <option name="closed" value="true" />
+      <created>1711307284446</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1711307284446</updated>
+    </task>
+    <task id="LOCAL-00041" summary="creating data model for the Login Response">
+      <option name="closed" value="true" />
+      <created>1711309819909</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1711309819909</updated>
+    </task>
+    <task id="LOCAL-00042" summary="refactor some packages">
+      <option name="closed" value="true" />
+      <created>1711311240509</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1711311240509</updated>
+    </task>
+    <task id="LOCAL-00043" summary="adding NetworkModule">
+      <option name="closed" value="true" />
+      <created>1711311326254</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1711311326254</updated>
+    </task>
+    <task id="LOCAL-00044" summary="adding internet permission">
+      <option name="closed" value="true" />
+      <created>1711311827848</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1711311827848</updated>
+    </task>
+    <task id="LOCAL-00045" summary="fixing the LoginApi">
+      <option name="closed" value="true" />
+      <created>1711314503375</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1711314503375</updated>
+    </task>
+    <task id="LOCAL-00046" summary="minor fix">
+      <option name="closed" value="true" />
+      <created>1711452190373</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1711452190373</updated>
+    </task>
+    <task id="LOCAL-00047" summary="refactor the keyValue storage">
+      <option name="closed" value="true" />
+      <created>1711466864357</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1711466864357</updated>
+    </task>
+    <task id="LOCAL-00048" summary="fix bugs">
+      <option name="closed" value="true" />
+      <created>1711485373298</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1711485373298</updated>
+    </task>
+    <task id="LOCAL-00049" summary="adding LoginRequest">
+      <option name="closed" value="true" />
+      <created>1711622487805</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1711622487805</updated>
+    </task>
+    <task id="LOCAL-00050" summary="refactor and fix interface naming">
+      <option name="closed" value="true" />
+      <created>1711622623026</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1711622623027</updated>
+    </task>
+    <task id="LOCAL-00051" summary="fix themes.xml">
+      <option name="closed" value="true" />
+      <created>1711654517910</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1711654517910</updated>
+    </task>
+    <task id="LOCAL-00052" summary="fix Logger">
+      <option name="closed" value="true" />
+      <created>1711656745664</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1711656745664</updated>
+    </task>
+    <task id="LOCAL-00053" summary="change the key from a String to a generic type">
+      <option name="closed" value="true" />
+      <created>1711721794965</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1711721794966</updated>
+    </task>
+    <task id="LOCAL-00054" summary="work on the network advanced task">
+      <option name="closed" value="true" />
+      <created>1711832633619</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1711832633620</updated>
+    </task>
+    <task id="LOCAL-00055" summary="upgrade gradle AGP">
+      <option name="closed" value="true" />
+      <created>1711886520041</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1711886520042</updated>
+    </task>
+    <task id="LOCAL-00056" summary="create feature/single_selection">
+      <option name="closed" value="true" />
+      <created>1711972625797</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1711972625797</updated>
+    </task>
+    <task id="LOCAL-00057" summary="create feature/data_encryption to encrypt the user and the access token">
+      <option name="closed" value="true" />
+      <created>1712141239875</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1712141239876</updated>
+    </task>
+    <task id="LOCAL-00058" summary="finish up the feature/data_encryption">
+      <option name="closed" value="true" />
+      <created>1712155798265</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1712155798266</updated>
+    </task>
+    <task id="LOCAL-00059" summary="add dependencies Implementation">
+      <option name="closed" value="true" />
+      <created>1713346789793</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1713346789793</updated>
+    </task>
+    <task id="LOCAL-00060" summary="add dependencies Implementation">
+      <option name="closed" value="true" />
+      <created>1713346802137</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1713346802137</updated>
+    </task>
+    <task id="LOCAL-00061" summary="test KeystoreUtils">
+      <option name="closed" value="true" />
+      <created>1713371637526</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1713371637527</updated>
+    </task>
+    <task id="LOCAL-00062" summary="add implementations">
+      <option name="closed" value="true" />
+      <created>1713371720420</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1713371720420</updated>
+    </task>
+    <task id="LOCAL-00063" summary="test DataStoreStorage">
+      <option name="closed" value="true" />
+      <created>1713371765502</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1713371765502</updated>
+    </task>
+    <task id="LOCAL-00064" summary="test LocalDataSource">
+      <option name="closed" value="true" />
+      <created>1713422271845</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1713422271846</updated>
+    </task>
+    <task id="LOCAL-00065" summary="update dependencies">
+      <option name="closed" value="true" />
+      <created>1713422325113</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1713422325113</updated>
+    </task>
+    <task id="LOCAL-00066" summary="test LoginWithPhoneUC">
+      <option name="closed" value="true" />
+      <created>1713422947672</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1713422947672</updated>
+    </task>
+    <task id="LOCAL-00067" summary="test RemoteDataSource">
+      <option name="closed" value="true" />
+      <created>1713423858971</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1713423858971</updated>
+    </task>
+    <task id="LOCAL-00068" summary="rename functions of LoginWithPhoneUCTest">
+      <option name="closed" value="true" />
+      <created>1713438971071</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1713438971071</updated>
+    </task>
+    <task id="LOCAL-00069" summary="update testcases in KeystoreUtilsAndroidTest">
+      <option name="closed" value="true" />
+      <created>1713444859153</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1713444859154</updated>
+    </task>
+    <task id="LOCAL-00070" summary="update testcases in LoginWithPhoneUCTest">
+      <option name="closed" value="true" />
+      <created>1713445226159</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1713445226159</updated>
+    </task>
+    <task id="LOCAL-00071" summary="fix gradle dependencies">
+      <option name="closed" value="true" />
+      <created>1713610893889</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1713610893890</updated>
+    </task>
+    <task id="LOCAL-00072" summary="fix gradle dependencies">
+      <option name="closed" value="true" />
+      <created>1713613415159</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1713613415159</updated>
+    </task>
+    <task id="LOCAL-00073" summary="delete the LocalDataSourceTest from the androidTest and make it in the unit test">
+      <option name="closed" value="true" />
+      <created>1713613492968</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1713613492968</updated>
+    </task>
+    <task id="LOCAL-00074" summary="refactor the keystoreUnitls and make interface IKeystoreUtils to mockit">
+      <option name="closed" value="true" />
+      <created>1713613564493</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1713613564493</updated>
+    </task>
+    <task id="LOCAL-00075" summary="change the android.util.Base64 to java.util.Base64 to test it easily">
+      <option name="closed" value="true" />
+      <created>1713613610397</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1713613610398</updated>
+    </task>
+    <task id="LOCAL-00076" summary="add test methods to LocalDataSourceTest and refactor LocalDataSource">
+      <option name="closed" value="true" />
+      <created>1713618943848</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1713618943849</updated>
+    </task>
+    <task id="LOCAL-00077" summary="fix bugs">
+      <option name="closed" value="true" />
+      <created>1713776346400</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1713776346401</updated>
+    </task>
+    <task id="LOCAL-00078" summary="add TranslateListWorker">
+      <option name="closed" value="true" />
+      <created>1713874983464</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1713874983467</updated>
+    </task>
+    <task id="LOCAL-00079" summary="refactor ListViewModel and ListFragment">
+      <option name="closed" value="true" />
+      <created>1713892271554</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1713892271554</updated>
+    </task>
+    <task id="LOCAL-00080" summary="add HiltAndroidTest">
+      <option name="closed" value="true" />
+      <created>1713895422705</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1713895422705</updated>
+    </task>
+    <task id="LOCAL-00081" summary="add HiltAndroidTest">
+      <option name="closed" value="true" />
+      <created>1714303300513</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1714303300514</updated>
+    </task>
+    <task id="LOCAL-00082" summary="fix files">
+      <option name="closed" value="true" />
+      <created>1714383074744</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1714383074744</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="develop" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add dependencies Implementation" />
+    <MESSAGE value="test KeystoreUtils" />
+    <MESSAGE value="add implementations" />
+    <MESSAGE value="test DataStoreStorage" />
+    <MESSAGE value="test LocalDataSource" />
+    <MESSAGE value="update dependencies" />
+    <MESSAGE value="test LoginWithPhoneUC" />
+    <MESSAGE value="test RemoteDataSource" />
+    <MESSAGE value="rename functions of LoginWithPhoneUCTest" />
+    <MESSAGE value="update testcases in KeystoreUtilsAndroidTest" />
+    <MESSAGE value="update testcases in LoginWithPhoneUCTest" />
+    <MESSAGE value="fix gradle dependencies" />
+    <MESSAGE value="delete the LocalDataSourceTest from the androidTest and make it in the unit test" />
+    <MESSAGE value="refactor the keystoreUnitls and make interface IKeystoreUtils to mockit" />
+    <MESSAGE value="change the android.util.Base64 to java.util.Base64 to test it easily" />
+    <MESSAGE value="add test methods to LocalDataSourceTest and refactor LocalDataSource" />
+    <MESSAGE value="fix bugs" />
+    <MESSAGE value="add TranslateListWorker" />
+    <MESSAGE value="refactor ListViewModel and ListFragment" />
+    <MESSAGE value="add HiltAndroidTest" />
+    <MESSAGE value="fix files" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix files" />
+  </component>
+  <component name="WfRunsListSearchHistory"><![CDATA[{
+  "history": [
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    }
+  ],
+  "lastFilter": {
+  }
+}]]></component>
+  <component name="com.gk646.codestats.settings.Save">
+    <option name="commitTimePoints">
+      <list>
+        <TimePoint>
+          <option name="timestamp" value="1709464512375" />
+          <option name="linesCode" value="109" />
+          <option name="totalLines" value="754" />
+          <option name="info" value="initial commit" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1709465969230" />
+          <option name="linesCode" value="12735" />
+          <option name="totalLines" value="328285" />
+          <option name="info" value="adding tajwal_font.xml" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1709467874076" />
+          <option name="linesCode" value="12735" />
+          <option name="totalLines" value="328291" />
+          <option name="info" value="adding galano_grotesque.x" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1709467921873" />
+          <option name="linesCode" value="12735" />
+          <option name="totalLines" value="328291" />
+          <option name="info" value="refactor tajwal_font.xml " />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1709468902974" />
+          <option name="linesCode" value="13313" />
+          <option name="totalLines" value="342372" />
+          <option name="info" value="adding ArabicFontStyle an" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1709479498239" />
+          <option name="linesCode" value="13243" />
+          <option name="totalLines" value="328950" />
+          <option name="info" value="get the device language t" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1709480374378" />
+          <option name="linesCode" value="13243" />
+          <option name="totalLines" value="328950" />
+          <option name="info" value="update the xml" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1709529558466" />
+          <option name="linesCode" value="13243" />
+          <option name="totalLines" value="328967" />
+          <option name="info" value="Added logging flavor dime" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1709533741254" />
+          <option name="linesCode" value="38366" />
+          <option name="totalLines" value="1191162" />
+          <option name="info" value="create custom logger" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1709533754629" />
+          <option name="linesCode" value="38366" />
+          <option name="totalLines" value="1191162" />
+          <option name="info" value="create custom logger" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1709533785324" />
+          <option name="linesCode" value="38366" />
+          <option name="totalLines" value="1191162" />
+          <option name="info" value="create custom logger" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1709548096704" />
+          <option name="linesCode" value="38366" />
+          <option name="totalLines" value="1192458" />
+          <option name="info" value="fix the one line file" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1709548157858" />
+          <option name="linesCode" value="38366" />
+          <option name="totalLines" value="1192458" />
+          <option name="info" value="adding resources files in" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1709578007217" />
+          <option name="linesCode" value="38390" />
+          <option name="totalLines" value="1192560" />
+          <option name="info" value="adding data models" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1709578042046" />
+          <option name="linesCode" value="38390" />
+          <option name="totalLines" value="1192560" />
+          <option name="info" value="creating country_item.xml" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1709611641811" />
+          <option name="linesCode" value="38390" />
+          <option name="totalLines" value="1192655" />
+          <option name="info" value="creating currency_item.xm" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1709611679704" />
+          <option name="linesCode" value="38390" />
+          <option name="totalLines" value="1192655" />
+          <option name="info" value="creating filter_item.xml" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1709794053843" />
+          <option name="linesCode" value="48777" />
+          <option name="totalLines" value="1276963" />
+          <option name="info" value="delete applicationIdSuffi" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1709794147472" />
+          <option name="linesCode" value="48781" />
+          <option name="totalLines" value="1276966" />
+          <option name="info" value="change the moc to mock" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1709794169846" />
+          <option name="linesCode" value="48781" />
+          <option name="totalLines" value="1276966" />
+          <option name="info" value="add DummyWriter to BaseAp" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1709795552065" />
+          <option name="linesCode" value="48781" />
+          <option name="totalLines" value="1276966" />
+          <option name="info" value="fixing fonts" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1709798522831" />
+          <option name="linesCode" value="49843" />
+          <option name="totalLines" value="1298683" />
+          <option name="info" value="fixing ListRecyclerView" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1710224445431" />
+          <option name="linesCode" value="49716" />
+          <option name="totalLines" value="1298517" />
+          <option name="info" value="adding login Files" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1710272575016" />
+          <option name="linesCode" value="49716" />
+          <option name="totalLines" value="1298540" />
+          <option name="info" value="adding coroutines and lif" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1710273619518" />
+          <option name="linesCode" value="49778" />
+          <option name="totalLines" value="1298609" />
+          <option name="info" value="adding viewmodel and view" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1710279257245" />
+          <option name="linesCode" value="48929" />
+          <option name="totalLines" value="1310756" />
+          <option name="info" value="Observe the state on the " />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1710332196970" />
+          <option name="linesCode" value="48939" />
+          <option name="totalLines" value="1310769" />
+          <option name="info" value="add repo imp" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1710332963773" />
+          <option name="linesCode" value="48930" />
+          <option name="totalLines" value="1310760" />
+          <option name="info" value="change the mapper ro obje" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1710530691539" />
+          <option name="linesCode" value="48948" />
+          <option name="totalLines" value="1310787" />
+          <option name="info" value="change the saveDataSource" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1710671091910" />
+          <option name="linesCode" value="48979" />
+          <option name="totalLines" value="1310825" />
+          <option name="info" value="adding di" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1711466865880" />
+          <option name="linesCode" value="20122" />
+          <option name="totalLines" value="779791" />
+          <option name="info" value="refactor the keyValue sto" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1711485376316" />
+          <option name="linesCode" value="20122" />
+          <option name="totalLines" value="779776" />
+          <option name="info" value="fix bugs" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1711721796836" />
+          <option name="linesCode" value="19843" />
+          <option name="totalLines" value="583086" />
+          <option name="info" value="change the key from a Str" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1711832635448" />
+          <option name="linesCode" value="20822" />
+          <option name="totalLines" value="769520" />
+          <option name="info" value="work on the network advan" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1711886522070" />
+          <option name="linesCode" value="20822" />
+          <option name="totalLines" value="769520" />
+          <option name="info" value="upgrade gradle AGP" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1712141242372" />
+          <option name="linesCode" value="20523" />
+          <option name="totalLines" value="760658" />
+          <option name="info" value="create feature/data_encry" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1712155800803" />
+          <option name="linesCode" value="20527" />
+          <option name="totalLines" value="762359" />
+          <option name="info" value="finish up the feature/dat" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1713346791344" />
+          <option name="linesCode" value="20527" />
+          <option name="totalLines" value="762366" />
+          <option name="info" value="add dependencies Implemen" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1713346802650" />
+          <option name="linesCode" value="20527" />
+          <option name="totalLines" value="762366" />
+          <option name="info" value="add dependencies Implemen" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1713371638883" />
+          <option name="linesCode" value="22014" />
+          <option name="totalLines" value="806270" />
+          <option name="info" value="test KeystoreUtils" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1713371721429" />
+          <option name="linesCode" value="22014" />
+          <option name="totalLines" value="806269" />
+          <option name="info" value="add implementations" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1713371766052" />
+          <option name="linesCode" value="22014" />
+          <option name="totalLines" value="806269" />
+          <option name="info" value="test DataStoreStorage" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1713422272968" />
+          <option name="linesCode" value="22339" />
+          <option name="totalLines" value="861163" />
+          <option name="info" value="test LocalDataSource" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1713422325709" />
+          <option name="linesCode" value="22339" />
+          <option name="totalLines" value="861163" />
+          <option name="info" value="update dependencies" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1713422948310" />
+          <option name="linesCode" value="22271" />
+          <option name="totalLines" value="861064" />
+          <option name="info" value="test LoginWithPhoneUC" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1713423860008" />
+          <option name="linesCode" value="22234" />
+          <option name="totalLines" value="861111" />
+          <option name="info" value="test RemoteDataSource" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1713438972131" />
+          <option name="linesCode" value="22244" />
+          <option name="totalLines" value="861269" />
+          <option name="info" value="rename functions of Login" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1713444860013" />
+          <option name="linesCode" value="22173" />
+          <option name="totalLines" value="861351" />
+          <option name="info" value="update testcases in Keyst" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1713445226811" />
+          <option name="linesCode" value="22211" />
+          <option name="totalLines" value="861509" />
+          <option name="info" value="update testcases in Login" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1713610895434" />
+          <option name="linesCode" value="22251" />
+          <option name="totalLines" value="861769" />
+          <option name="info" value="fix gradle dependencies" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1713613416093" />
+          <option name="linesCode" value="22213" />
+          <option name="totalLines" value="861238" />
+          <option name="info" value="fix gradle dependencies" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1713613493720" />
+          <option name="linesCode" value="22213" />
+          <option name="totalLines" value="861238" />
+          <option name="info" value="delete the LocalDataSourc" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1713613565136" />
+          <option name="linesCode" value="22213" />
+          <option name="totalLines" value="861238" />
+          <option name="info" value="refactor the keystoreUnit" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1713613611274" />
+          <option name="linesCode" value="22213" />
+          <option name="totalLines" value="861238" />
+          <option name="info" value="change the android.util.B" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1713618945149" />
+          <option name="linesCode" value="22344" />
+          <option name="totalLines" value="863812" />
+          <option name="info" value="add test methods to Local" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1713776349039" />
+          <option name="linesCode" value="22309" />
+          <option name="totalLines" value="864825" />
+          <option name="info" value="fix bugs" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1714383076448" />
+          <option name="linesCode" value="26413" />
+          <option name="totalLines" value="872614" />
+          <option name="info" value="fix files" />
+        </TimePoint>
+      </list>
+    </option>
+    <option name="genericTimePoints">
+      <list>
+        <TimePoint>
+          <option name="timestamp" value="1709480374378" />
+          <option name="linesCode" value="13243" />
+          <option name="totalLines" value="328950" />
+          <option name="info" value="Mar 3, 2024" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1709533785324" />
+          <option name="linesCode" value="38366" />
+          <option name="totalLines" value="1191162" />
+          <option name="info" value="Mar 4, 2024" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1709578042046" />
+          <option name="linesCode" value="38390" />
+          <option name="totalLines" value="1192560" />
+          <option name="info" value="Mar 4, 2024" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1710224445431" />
+          <option name="linesCode" value="49716" />
+          <option name="totalLines" value="1298517" />
+          <option name="info" value="Mar 12, 2024" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1710279257245" />
+          <option name="linesCode" value="48929" />
+          <option name="totalLines" value="1310756" />
+          <option name="info" value="Mar 12, 2024" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1710332963773" />
+          <option name="linesCode" value="48930" />
+          <option name="totalLines" value="1310760" />
+          <option name="info" value="Mar 13, 2024" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1710530691539" />
+          <option name="linesCode" value="48948" />
+          <option name="totalLines" value="1310787" />
+          <option name="info" value="Mar 15, 2024" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1710671091910" />
+          <option name="linesCode" value="48979" />
+          <option name="totalLines" value="1310825" />
+          <option name="info" value="Mar 17, 2024" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1711485376316" />
+          <option name="linesCode" value="20122" />
+          <option name="totalLines" value="779776" />
+          <option name="info" value="Mar 26, 2024" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1711721796836" />
+          <option name="linesCode" value="19843" />
+          <option name="totalLines" value="583086" />
+          <option name="info" value="Mar 29, 2024" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1711832635448" />
+          <option name="linesCode" value="20822" />
+          <option name="totalLines" value="769520" />
+          <option name="info" value="Mar 30, 2024" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1711886522070" />
+          <option name="linesCode" value="20822" />
+          <option name="totalLines" value="769520" />
+          <option name="info" value="Mar 31, 2024" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1712155800803" />
+          <option name="linesCode" value="20527" />
+          <option name="totalLines" value="762359" />
+          <option name="info" value="Apr 3, 2024" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1713346802650" />
+          <option name="linesCode" value="20527" />
+          <option name="totalLines" value="762366" />
+          <option name="info" value="Apr 17, 2024" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1713371766052" />
+          <option name="linesCode" value="22014" />
+          <option name="totalLines" value="806269" />
+          <option name="info" value="Apr 17, 2024" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1713423860008" />
+          <option name="linesCode" value="22234" />
+          <option name="totalLines" value="861111" />
+          <option name="info" value="Apr 18, 2024" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1713445226811" />
+          <option name="linesCode" value="22211" />
+          <option name="totalLines" value="861509" />
+          <option name="info" value="Apr 18, 2024" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1713618945149" />
+          <option name="linesCode" value="22344" />
+          <option name="totalLines" value="863812" />
+          <option name="info" value="Apr 20, 2024" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1713776349039" />
+          <option name="linesCode" value="22309" />
+          <option name="totalLines" value="864825" />
+          <option name="info" value="Apr 22, 2024" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1714383076448" />
+          <option name="linesCode" value="26413" />
+          <option name="totalLines" value="872614" />
+          <option name="info" value="Apr 29, 2024" />
+        </TimePoint>
+      </list>
+    </option>
+  </component>
+</project>
