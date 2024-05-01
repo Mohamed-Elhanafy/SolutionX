@@ -29,7 +29,7 @@ interface RetrofitApi {
         @Path("pathUrl") pathUrl: String,
         @HeaderMap headers: Map<String, Any>,
         @QueryMap queryParameters: Map<String, Any>
-    ): Response<LoginResponseDto>
+    ): Response<ResponseBody>
 
 
     @PUT
