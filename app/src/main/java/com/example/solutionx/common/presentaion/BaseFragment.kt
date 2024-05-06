@@ -1,5 +1,6 @@
 package com.example.solutionx.common.presentaion
 
+import android.app.Activity
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.LifecycleOwner
 import androidx.navigation.fragment.findNavController
 import androidx.viewbinding.ViewBinding
 import com.example.solutionx.R
@@ -20,7 +22,9 @@ abstract class BaseFragment<Binding : ViewBinding> : Fragment() {
 
     protected abstract val bindingClass: Class<Binding>
 
-    protected lateinit var binding: Binding
+    private var _binding: Binding? = null
+
+    protected val binding: Binding get() = _binding!!
 
 
     override fun onCreateView(
@@ -28,30 +32,19 @@ abstract class BaseFragment<Binding : ViewBinding> : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = viewBinding(bindingClass).getValue(this, this::binding)
+        _binding = bindView()
 
-        loadingView = LoadingViewBinding.inflate(inflater, binding?.root as ViewGroup, true) // Inflate loading view
+        loadingView = LoadingViewBinding.inflate(
+            inflater,
+            binding.root as ViewGroup,
+            true
+        ) // Inflate loading view
 
         return binding.root
 
     }
 
 
-    protected fun handleStatusCode(statusCode: Int) {
-        when (statusCode) {
-            401 -> {
-                findNavController().navigate(R.id.action_global_to_loginFragment)
-            }
-
-            404 -> {
-                // navigate to 404 page
-            }
-
-            else -> {
-                Toast.makeText(context, "Unknown Error", Toast.LENGTH_SHORT).show()
-            }
-        }
-    }
 
     protected fun handleNetworkError(error: Throwable) {
         if (error is SolutionXException.NetworkErrors.NoInternetConnection) {
@@ -63,17 +56,6 @@ abstract class BaseFragment<Binding : ViewBinding> : Fragment() {
         }
     }
 
-    protected fun navigateTo(destination: Int) {
-        findNavController().navigate(destination)
-    }
-
-    protected fun navigateBack() {
-        findNavController().popBackStack()
-    }
-
-    protected fun navigateDeepLink(uri: Uri) {
-        findNavController().navigate(uri)
-    }
 
     protected fun showLoading() {
         loadingView.loadingView.visibility = View.VISIBLE
@@ -83,7 +65,6 @@ abstract class BaseFragment<Binding : ViewBinding> : Fragment() {
         loadingView.loadingView.visibility = View.GONE
     }
 
-    protected fun showError(message: String) {
-        Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
-    }
+
+
 }

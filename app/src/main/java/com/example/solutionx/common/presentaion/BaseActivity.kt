@@ -1,46 +1,57 @@
 package com.example.solutionx.common.presentaion
 
 
+import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.ViewGroup
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.LifecycleOwner
 import androidx.viewbinding.ViewBinding
+import com.example.solutionx.R
 
 abstract class BaseActivity<Binding : ViewBinding> : AppCompatActivity() {
     protected abstract val bindingClass: Class<Binding>
-    private lateinit var binding: Binding
+
+
+    private var _binding: Binding? = null
+    protected val binding: Binding get() = _binding!!
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = viewBinding(bindingClass).getValue(this, this::binding)
+        _binding = bindView()
+
         setContentView(binding.root)
+
+        enableEdgeToEdge()
+
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
+        }
+
+
+        viewInit()
+        onActivityReady(savedInstanceState)
+
     }
 
-    protected fun navigateTo(destination: Class<*>) {
-        val intent = Intent(this, destination)
-        startActivity(intent)
-    }
+    abstract fun onActivityReady(savedInstanceState: Bundle?)
 
-    protected fun openUrl(url: String) {
-        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
-        startActivity(intent)
-    }
-    protected fun checkPermission(permission: String): Boolean {
-        return ContextCompat.checkSelfPermission(
-            this,
-            permission
-        ) == PackageManager.PERMISSION_GRANTED
-    }
-
-    protected fun requestPermission(permission: String, requestCode: Int) {
-        ActivityCompat.requestPermissions(this, arrayOf(permission), requestCode)
-    }
+    abstract fun viewInit()
 
 
 
 }
+
