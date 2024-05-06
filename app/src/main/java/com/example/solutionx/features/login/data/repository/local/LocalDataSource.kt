@@ -1,6 +1,6 @@
 package com.example.solutionx.features.login.data.repository.local
 
-import am.leon.utilities.android.helpers.logging.LoggerFactory
+import com.example.solutionx.android.helpers.logger.LoggerFactory
 import android.util.Base64
 import com.example.solutionx.android.helpers.security.KeystoreUtils
 import com.example.solutionx.features.login.data.model.entity.LoginResponseEntity

@@ -1,7 +1,7 @@
-package am.leon.utilities.android.helpers.logging
+package com.example.solutionx.android.helpers.logger
 
+import am.leon.utilities.android.helpers.logging.LogWriter
 import am.leon.utilities.android.helpers.logging.writers.DummyWriter
-import com.example.solutionx.android.helpers.logger.Logger
 
 object LoggerFactory {
     var currentLogWriter: LogWriter = DummyWriter()
@@ -18,4 +18,11 @@ object LoggerFactory {
     fun setLogWriter(currentLogWriter: LogWriter) {
         LoggerFactory.currentLogWriter = currentLogWriter
     }
+}
+
+inline fun <reified T> T.getClassLogger(): Logger {
+    if (T::class.isCompanion) {
+        return LoggerFactory.getLogger(T::class.java.enclosingClass as Class<*>)
+    }
+    return LoggerFactory.getLogger(T::class.java)
 }

@@ -1,6 +1,6 @@
 package com.example.solutionx.features.login.domain.interactor
 
-import am.leon.utilities.android.helpers.logging.LoggerFactory
+import com.example.solutionx.android.helpers.logger.LoggerFactory
 import com.example.solutionx.common.data.extentions.wrapper
 import com.example.solutionx.common.data.models.Resource
 import com.example.solutionx.features.login.data.model.request.LoginRequest

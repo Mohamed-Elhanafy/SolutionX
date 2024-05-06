@@ -1,35 +1,49 @@
 package com.example.solutionx
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
+import com.example.solutionx.common.data.models.SolutionXException
+import com.example.solutionx.common.presentaion.BaseActivity
+import com.example.solutionx.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 
 @AndroidEntryPoint
-class MainActivity : AppCompatActivity() {
+class MainActivity() : BaseActivity<ActivityMainBinding>() {
+    override val bindingClass = ActivityMainBinding::class.java
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-
-        setContentView(R.layout.activity_main)
-
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
 
         //set up the host fragment and the nav controller
-        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
-        val navController = navHostFragment?.findNavController()
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(binding.navHostFragment.id) as NavHostFragment
+        val navController = navHostFragment.findNavController()
 
+    }
+
+    override fun onActivityReady(savedInstanceState: Bundle?) {
+        TODO("Not yet implemented")
+    }
+
+    override fun viewInit() {
+        TODO("Not yet implemented")
+    }
+
+
+    fun handleHttpException(exception : SolutionXException){
+       when(exception){
+           is SolutionXException.HttpException -> TODO()
+           is SolutionXException.IOException -> TODO()
+           is SolutionXException.NetworkErrors.NoInternetConnection -> TODO()
+           is SolutionXException.NetworkErrors.TimeoutException -> TODO()
+           is SolutionXException.NetworkErrors.UnreachableNetwork -> TODO()
+
+           is SolutionXException.NoNetworkConnection -> TODO()
+           is SolutionXException.Unknown -> TODO()
+       }
     }
 
 

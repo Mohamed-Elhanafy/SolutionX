@@ -1,6 +1,6 @@
 package com.example.solutionx.presentation.screens.login
 
-import am.leon.utilities.android.helpers.logging.LoggerFactory
+import com.example.solutionx.android.helpers.logger.LoggerFactory
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.solutionx.common.data.models.Resource
