@@ -8,28 +8,23 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.viewbinding.ViewBinding
 
 @Suppress("UNCHECKED_CAST")
-fun <B : ViewBinding> LifecycleOwner.bindView(container: ViewGroup? = null): B {
-    return if (this is Activity) {
-        val inflateMethod = getClass<B>().getMethod(
-            "inflate",
-            LayoutInflater::class.java,
-            ViewGroup::class.java,
-            Boolean::class.javaPrimitiveType
-        )
-        val invokeLayout = inflateMethod.invoke(null, layoutInflater, container, false) as B
-        this.setContentView(invokeLayout.root)
-        invokeLayout
-    } else {
-        val fragment = this as Fragment
-        val inflateMethod = getClass<B>().getMethod(
-            "inflate",
-            LayoutInflater::class.java,
-            ViewGroup::class.java,
-            Boolean::class.javaPrimitiveType
-        )
-        val invoke = inflateMethod.invoke(null, fragment.layoutInflater, container, false) as B
-        invoke
+fun <B : ViewBinding> Class<B>.bindView(lifecycleOwner: LifecycleOwner, container: ViewGroup? = null): B {
+    val inflateMethod = this.getMethod(
+        "inflate",
+        LayoutInflater::class.java,
+        ViewGroup::class.java,
+        Boolean::class.javaPrimitiveType
+    )
+    val layoutInflater = when (lifecycleOwner) {
+        is Activity -> lifecycleOwner.layoutInflater
+        is Fragment -> lifecycleOwner.layoutInflater
+        else -> throw IllegalArgumentException("Unsupported LifecycleOwner: $lifecycleOwner")
     }
+    val invokeLayout = inflateMethod.invoke(null, layoutInflater, container, false) as B
+    if (lifecycleOwner is Activity) {
+        lifecycleOwner.setContentView(invokeLayout.root)
+    }
+    return invokeLayout
 }
 
 

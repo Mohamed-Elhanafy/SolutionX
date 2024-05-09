@@ -32,7 +32,7 @@ abstract class BaseFragment<Binding : ViewBinding> : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = bindView()
+        _binding = bindingClass.bindView(this, container)
 
         loadingView = LoadingViewBinding.inflate(
             inflater,
