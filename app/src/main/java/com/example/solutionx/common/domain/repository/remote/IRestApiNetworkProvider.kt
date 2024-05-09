@@ -30,4 +30,11 @@ interface IRestApiNetworkProvider {
     ): ResponseBody
 
 
+    suspend fun <ResponseBody, RequestBody> delete(
+        responseWrappedModel: Type,
+        pathUrl: String,
+        headers: Map<String, Any>?,
+        queryParams: Map<String, Any>?,
+        requestBody: RequestBody?
+    ): ResponseBody
 }

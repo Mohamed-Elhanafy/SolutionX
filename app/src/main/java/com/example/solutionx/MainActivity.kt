@@ -1,8 +1,10 @@
 package com.example.solutionx
 
 import android.os.Bundle
+import android.util.Log
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
+import com.example.solutionx.android.helpers.logger.LoggerFactory
 import com.example.solutionx.common.data.models.SolutionXException
 import com.example.solutionx.common.presentaion.BaseActivity
 import com.example.solutionx.databinding.ActivityMainBinding
@@ -25,28 +27,31 @@ class MainActivity() : BaseActivity<ActivityMainBinding>() {
     }
 
     override fun onActivityReady(savedInstanceState: Bundle?) {
-        TODO("Not yet implemented")
+        logger.info("onActivityReady")
     }
 
     override fun viewInit() {
-        TODO("Not yet implemented")
+
     }
 
 
-    fun handleHttpException(exception : SolutionXException){
-       when(exception){
-           is SolutionXException.HttpException -> TODO()
-           is SolutionXException.IOException -> TODO()
-           is SolutionXException.NetworkErrors.NoInternetConnection -> TODO()
-           is SolutionXException.NetworkErrors.TimeoutException -> TODO()
-           is SolutionXException.NetworkErrors.UnreachableNetwork -> TODO()
+    fun handleHttpException(exception: SolutionXException) {
+        when (exception) {
+            is SolutionXException.HttpException -> TODO()
+            is SolutionXException.IOException -> TODO()
+            is SolutionXException.NetworkErrors.NoInternetConnection -> TODO()
+            is SolutionXException.NetworkErrors.TimeoutException -> TODO()
+            is SolutionXException.NetworkErrors.UnreachableNetwork -> TODO()
 
-           is SolutionXException.NoNetworkConnection -> TODO()
-           is SolutionXException.Unknown -> TODO()
-       }
+            is SolutionXException.NoNetworkConnection -> TODO()
+            is SolutionXException.Unknown -> TODO()
+        }
     }
 
-
+    companion object {
+     val logger = LoggerFactory.getLogger(MainActivity::class.java)
+    }
 }
+
 
 

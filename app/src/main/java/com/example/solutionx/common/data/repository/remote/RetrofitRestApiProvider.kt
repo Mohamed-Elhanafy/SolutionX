@@ -35,6 +35,20 @@ class RetrofitRestApiProvider(private val api: RetrofitApi) : IRestApiNetworkPro
         return Gson().fromJson(response.string(), responseWrappedModel)
     }
 
+    override suspend fun <ResponseBody, RequestBody> delete(
+        responseWrappedModel: Type, pathUrl: String, headers: Map<String, Any>?,
+        queryParams: Map<String, Any>?, requestBody: RequestBody?
+    ): ResponseBody {
+        val response = api.delete(
+            pathUrl = pathUrl,
+            headers = headers ?: emptyMap(),
+            queryParameters = queryParams ?: emptyMap(),
+            requestBody = requestBody ?: Unit
+        )
+        return Gson().fromJson(response.string(), responseWrappedModel)
+    }
+
+
     override suspend fun <ResponseBody, RequestBody> put(
         responseWrappedModel: Type,
         pathUrl: String,

@@ -4,6 +4,7 @@ import com.example.solutionx.features.login.data.model.dto.LoginResponseDto
 import okhttp3.ResponseBody
 import retrofit2.Response
 import retrofit2.http.Body
+import retrofit2.http.DELETE
 import retrofit2.http.GET
 import retrofit2.http.HeaderMap
 import retrofit2.http.POST
@@ -35,6 +36,16 @@ interface RetrofitApi {
     @PUT
     @JvmSuppressWildcards
     suspend fun put(
+        @Path("pathUrl") pathUrl: String,
+        @HeaderMap headers: Map<String, Any>,
+        @QueryMap queryParameters: Map<String, Any>,
+        @Body requestBody: Any
+    ): ResponseBody
+
+
+    @DELETE("{pathUrl}")
+    @JvmSuppressWildcards
+    suspend fun delete(
         @Path("pathUrl") pathUrl: String,
         @HeaderMap headers: Map<String, Any>,
         @QueryMap queryParameters: Map<String, Any>,
