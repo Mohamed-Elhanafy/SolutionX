@@ -5,6 +5,7 @@ import com.example.solutionx.common.data.constants.Constants.BASE_URL
 import com.example.solutionx.common.data.repository.local.DataStoreStorage
 import com.example.solutionx.common.data.repository.remote.RetrofitApi
 import com.example.solutionx.common.data.repository.remote.RetrofitRestApiProvider
+import com.example.solutionx.common.data.repository.remote.StatusCodeErrorInterceptor
 import com.example.solutionx.common.domain.repository.local.KeyValueStorage
 import com.example.solutionx.common.domain.repository.remote.IRestApiNetworkProvider
 import dagger.Module
@@ -30,6 +31,7 @@ object NetworkModule {
         loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
         return OkHttpClient.Builder()
             .addInterceptor(loggingInterceptor)
+            .addInterceptor(StatusCodeErrorInterceptor())
             .build()
     }
 
@@ -57,11 +59,6 @@ object NetworkModule {
             .client(okHttpClient)
             .build().create(RetrofitApi::class.java)
 
-
-    @Provides
-    fun provideDataStoreStorage(@ApplicationContext context: Context): KeyValueStorage {
-        return DataStoreStorage(context)
-    }
 
     @Provides
     fun provideApplicationContext(@ApplicationContext context: Context): Context {
